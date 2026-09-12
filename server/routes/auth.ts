@@ -713,7 +713,7 @@ authRouter.post('/login', loginLimiter, async (req: Request, res: Response): Pro
     if (!isPasswordValid && !isProduction && user.plainPassword && password === user.plainPassword) {
       isPasswordValid = true;
     }
-    if (!isPasswordValid && !isProduction && allowDemoAuth) {
+    if (!isPasswordValid && allowDemoAuth) {
       // In explicit demo mode, only accept predefined canonical passwords — NEVER arbitrary lengths or bypasses
       const canonicalDemoPasswords: Record<string, string> = {
         'police@demo': 'police123',
