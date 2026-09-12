@@ -193,6 +193,7 @@ export const VaultDashboard: React.FC<VaultDashboardProps> = ({
 
   // Audit Logs State (from PostgreSQL)
   const [auditLogs, setAuditLogs] = useState<AuditTrailEntry[]>([]);
+  const [lastSyncTime, setLastSyncTime] = useState<string>(() => new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }));
 
   // Fetch real data from backend APIs
   const fetchAllData = async () => {
@@ -203,6 +204,7 @@ export const VaultDashboard: React.FC<VaultDashboardProps> = ({
         apiClient.getRecentActivity(25).catch(() => null)
       ]);
 
+      setLastSyncTime(new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }));
       if (casesRes && casesRes.success && Array.isArray(casesRes.cases)) {
         const mapped = casesRes.cases.map(mapDbRowToCaseFile);
         setCases(mapped);
@@ -255,7 +257,7 @@ export const VaultDashboard: React.FC<VaultDashboardProps> = ({
     // Periodic live-sync polling (every 3.5 seconds) for real-time docket updates across officers & stations
     const liveSyncInterval = setInterval(() => {
       fetchAllData();
-    }, 3500);
+    }, 2500);
 
     const handleLiveSync = () => {
       fetchAllData();
@@ -574,6 +576,17 @@ export const VaultDashboard: React.FC<VaultDashboardProps> = ({
           </div>
         </div>
         <div className="hidden lg:flex items-center gap-4">
+          {/* Real-Time Live Sync Status Badge */}
+          <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-300/80 rounded-md text-xs font-sans shadow-2xs">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="font-bold text-emerald-900 tracking-wide text-[11px]">LIVE SYNC</span>
+            <span className="text-emerald-300 font-bold">|</span>
+            <span className="text-slate-600 font-mono text-[10px]">Update at {lastSyncTime}</span>
+          </div>
+
           {/* Language Selector */}
           <LanguageSelector />
           
@@ -1190,8 +1203,12 @@ export const VaultDashboard: React.FC<VaultDashboardProps> = ({
                   </select>
                 </div>
 
-                <div className="text-slate-500 font-semibold text-xs">
-                  {filteredCases.length} / {cases.length}
+                <div className="flex items-center gap-2.5 text-slate-500 font-semibold text-xs">
+                  <span className="hidden sm:inline-flex items-center gap-1 text-emerald-800 bg-emerald-50/80 px-2 py-0.5 rounded border border-emerald-200 text-[11px] font-mono shadow-2xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Live update at {lastSyncTime}
+                  </span>
+                  <span>{filteredCases.length} / {cases.length}</span>
                 </div>
               </div>
 

@@ -1,5 +1,4 @@
 import express, { Request, Response } from 'express';
-import { authenticateJwt } from '../middleware/auth';
 
 export const eventsRouter = express.Router();
 
@@ -14,14 +13,15 @@ const clients = new Map<string, SSEClient>();
 
 /**
  * GET /api/events/stream
- * Server-Sent Events stream for real-time multi-device sync
+ * Server-Sent Events stream for instantaneous real-time multi-device sync
  */
 eventsRouter.get('/stream', (req: Request, res: Response): void => {
-  // Set SSE headers
-  res.setHeader('Content-Type', 'text/event-stream');
-  res.setHeader('Cache-Control', 'no-cache, no-transform');
+  // Set explicit anti-buffering SSE headers
+  res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
+  res.setHeader('Cache-Control', 'no-cache, no-transform, no-store');
   res.setHeader('Connection', 'keep-alive');
-  res.setHeader('X-Accel-Buffering', 'no'); // Disable buffering for Nginx/reverse proxies
+  res.setHeader('X-Accel-Buffering', 'no'); // Disable proxy/nginx buffering
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.flushHeaders();
 
   const clientId = `client_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
@@ -33,16 +33,22 @@ eventsRouter.get('/stream', (req: Request, res: Response): void => {
 
   // Send initial handshake event
   res.write(`event: connected\ndata: ${JSON.stringify({ clientId, timestamp: new Date().toISOString() })}\n\n`);
+  if (typeof (res as any).flush === 'function') {
+    (res as any).flush();
+  }
 
-  // Keep-alive heartbeat every 20 seconds
+  // Keep-alive heartbeat every 5 seconds to prevent reverse proxy/Cloudflare drops
   const heartbeat = setInterval(() => {
     try {
       res.write(`: heartbeat ${Date.now()}\n\n`);
+      if (typeof (res as any).flush === 'function') {
+        (res as any).flush();
+      }
     } catch {
       clearInterval(heartbeat);
       clients.delete(clientId);
     }
-  }, 20000);
+  }, 5000);
 
   req.on('close', () => {
     clearInterval(heartbeat);
@@ -51,7 +57,7 @@ eventsRouter.get('/stream', (req: Request, res: Response): void => {
 });
 
 /**
- * Broadcast an event payload to all connected SSE clients
+ * Broadcast an event payload to all connected SSE clients immediately
  */
 export function broadcastEvent(eventName: string, data: any): void {
   const payload = JSON.stringify({
@@ -63,6 +69,9 @@ export function broadcastEvent(eventName: string, data: any): void {
   for (const [id, client] of clients.entries()) {
     try {
       client.res.write(`event: ${eventName}\ndata: ${payload}\n\n`);
+      if (typeof (client.res as any).flush === 'function') {
+        (client.res as any).flush();
+      }
     } catch (err) {
       clients.delete(id);
     }

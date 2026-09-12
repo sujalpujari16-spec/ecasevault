@@ -4521,5 +4521,65 @@
         }
       ]
     }
+  },
+  {
+    "history_id": "5fd8be8b-4a95-4c9a-8a61-f94a130ad340",
+    "action": "CASE_REASSIGNED",
+    "changed_at": "2026-09-12T04:38:58.767Z",
+    "changed_by_badge": "MH-ADM-001",
+    "case_snapshot": {
+      "id": "CASE-OWNER-1789187938310",
+      "fir_number": "FIR-1789187938311",
+      "folder_name": "CASE-62F9-MH-MUM-GHATKOPAR-12SEPT2026",
+      "case_title": "Worli High-Value Commercial Robbery",
+      "police_station": "Worli Police Station",
+      "police_station_id": "STA-WORLI",
+      "jurisdiction_zone": "Zone II (Western Suburbs)",
+      "crime_type": "Armed Robbery",
+      "incident_date": "2026-09-11",
+      "incident_location": "Mumbai",
+      "status": "INVESTIGATION_ONGOING",
+      "priority": "HIGH",
+      "ipc_sections": [
+        "Sec 154 CrPC"
+      ],
+      "pi_in_charge": "Inspector Rajesh Patil",
+      "investigating_officer_id": "MH-POL-301",
+      "assigned_io": "Inspector D (New Lead IO)",
+      "assigned_io_badge": "MH-POL-301",
+      "assigned_at": "2026-09-12T04:38:58.539Z",
+      "assigned_by": "MH-ADM-001",
+      "supervising_dysp": "DySP Ananya Sharma, MPS",
+      "blockchain_tx_id": "TX-MH-MTXWAWPD",
+      "blockchain_status": "CONFIRMED",
+      "created_at": "2026-09-12T04:38:58.312Z",
+      "updated_at": "2026-09-12T04:38:58.539Z",
+      "summary_notes": "",
+      "fir_hard_copy_url": "",
+      "fir_hard_copy_file_name": "",
+      "evidence_items": [],
+      "documents": [],
+      "case_members": [],
+      "timeline": [
+        {
+          "id": "TL-REASSIGN-1789187938540",
+          "date": "2026-09-12",
+          "title": "Investigating Officer Reassigned",
+          "description": "Lead IO reallocated: MH-POL-101 → Inspector D (New Lead IO) (MH-POL-301). Reason: Administrative transfer: case escalated to Special Investigation Team (SIT). Former officer active case access revoked.",
+          "officer": "MH-ADM-001",
+          "badge": "MH-ADM-001",
+          "type": "REASSIGNMENT"
+        },
+        {
+          "id": "TL-CREATE-1789187938321",
+          "date": "2026-09-12",
+          "title": "FIR FIR-1789187938311 Registered",
+          "description": "Case officially created in e-CASEVAULT repository.",
+          "officer": "Command",
+          "badge": "MH-POL-101",
+          "type": "FIR"
+        }
+      ]
+    }
   }
 ]

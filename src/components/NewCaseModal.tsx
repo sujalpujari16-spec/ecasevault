@@ -599,6 +599,8 @@ export const NewCaseModal: React.FC<NewCaseModalProps> = ({
     setEventHash(finalEventHash);
     setPreviousHash(finalPrevHash);
     setRegisteredCase(newCase);
+    window.dispatchEvent(new CustomEvent('casevault:case-updated', { detail: { caseId: finalCaseId } }));
+    window.dispatchEvent(new CustomEvent('casevault:file-updated', { detail: { caseId: finalCaseId } }));
     setSmartStage('SUCCESS');
   };
 

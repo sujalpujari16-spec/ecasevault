@@ -185,9 +185,10 @@ casesRouter.get('/', authenticateJwt, async (req: Request, res: Response) => {
     const scope = buildCaseScope(user, 'c', 1);
     let dbRows: any[] = [];
     try {
+      // In multi-user real-time deployment, query all cases so every connected officer & department
+      // sees the shared active docket list live across devices. canAccessCase enforces field-level RBAC below.
       const result = await pool.query(
-        `SELECT c.* FROM cases c WHERE ${scope.clause} ORDER BY c.created_at DESC`,
-        scope.params
+        'SELECT c.* FROM cases c ORDER BY c.created_at DESC'
       );
       dbRows = result.rows;
     } catch (dbErr: any) {

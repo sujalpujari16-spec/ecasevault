@@ -3357,5 +3357,65 @@
       "newIOBadge": "MH-POL-301",
       "reason": "SIT Escalation"
     }
+  },
+  {
+    "eventId": "EVT-1789187938513-2CEE71",
+    "caseId": "CASE-OWNER-1789187938310",
+    "entityId": "REQ-MTXWAWUO-000460",
+    "entityType": "ACCESS",
+    "action": "ACCESS_REQUESTED",
+    "actorId": "MH-POL-102",
+    "actorName": "Officer B (Worli Colleague)",
+    "timestamp": "2026-09-12T04:38:58.513Z",
+    "dataHash": "7ededc3d48312e3534b05657c7b4d6e6e4f06d5009fd4dac57d8098071a47c16",
+    "previousHash": "63f25840de34884cc27d73a3fe34437d3d16a9d9689439623e587fbaf555cedc",
+    "eventHash": "dc35b617d17086da157de6c90482e0c7be4e1d228d042403ff384b4a26c7542d",
+    "blockchainTxId": "tx-fabric-chain-3DW2F9FwhtoVfebJBILgx75OHSKNBCQD",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "requestId": "REQ-MTXWAWUO-000460",
+      "reason": "Assisting in cyber forensics recovery of stolen encrypted drives"
+    }
+  },
+  {
+    "eventId": "EVT-1789187938530-38962B",
+    "caseId": "CASE-OWNER-1789187938310",
+    "entityId": "REQ-MTXWAWUO-000460",
+    "entityType": "ACCESS",
+    "action": "ACCESS_APPROVED",
+    "actorId": "MH-ADM-001",
+    "actorName": "Commissioner of Police (Admin)",
+    "timestamp": "2026-09-12T04:38:58.530Z",
+    "dataHash": "65bebe82cec62dc4503360d68b302d8fe9974b492e6d74756fb005ae5c42e7a8",
+    "previousHash": "dc35b617d17086da157de6c90482e0c7be4e1d228d042403ff384b4a26c7542d",
+    "eventHash": "fc018b9e7026e0935e0f536ba9044e0872630605232480954375b348c48ea792",
+    "blockchainTxId": "tx-fabric-chain-_AGLnnAm4JNeD1NrqQROCHJjBgUjJICV",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "requestId": "REQ-MTXWAWUO-000460",
+      "grantedToBadge": "MH-POL-102",
+      "expiresAt": "2026-09-14T04:38:58.527Z"
+    }
+  },
+  {
+    "eventId": "EVT-1789187938869-915098",
+    "caseId": "CASE-OWNER-1789187938310",
+    "entityId": "CASE-OWNER-1789187938310",
+    "entityType": "CASE",
+    "action": "CASE_REASSIGNED",
+    "actorId": "MH-ADM-001",
+    "actorName": "Commissioner of Police (Admin)",
+    "timestamp": "2026-09-12T04:38:58.869Z",
+    "dataHash": "9c76851042af0a536601670a0d0a06c1fcee7c1a0afc45b5d510988d745678d2",
+    "previousHash": "fc018b9e7026e0935e0f536ba9044e0872630605232480954375b348c48ea792",
+    "eventHash": "cde4e06465b0002e6bc07cd1e0ffef33ad2dac84ddfb005043796ee7b34ec04f",
+    "blockchainTxId": "tx-fabric-chain-zeTgZGWwAC5rwHzR4P_vM60trITd-wBQ",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "caseId": "CASE-OWNER-1789187938310",
+      "previousIOBadge": "MH-POL-101",
+      "newIOBadge": "MH-POL-301",
+      "reason": "SIT Escalation"
+    }
   }
 ]

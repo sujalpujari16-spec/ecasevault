@@ -39,33 +39,63 @@ export function getAuthToken(): string | null {
 
 /**
  * Real-Time Multi-Device SSE synchronization listener
+ * Maintains a persistent Server-Sent Events stream with automatic fast reconnect.
  */
 export function initRealTimeSync(onCaseUpdate?: (data: any) => void): () => void {
   let eventSource: EventSource | null = null;
-  try {
-    const sseUrl = `${API_BASE_URL}/events/stream`;
-    eventSource = new EventSource(sseUrl);
+  let isClosed = false;
+  let reconnectTimer: any = null;
 
-    eventSource.addEventListener('case_update', (e: MessageEvent) => {
-      try {
-        const payload = JSON.parse(e.data);
-        if (onCaseUpdate) {
-          onCaseUpdate(payload);
+  const connect = () => {
+    if (isClosed) return;
+    try {
+      const sseUrl = `${API_BASE_URL}/events/stream`;
+      eventSource = new EventSource(sseUrl);
+
+      eventSource.addEventListener('connected', () => {
+        window.dispatchEvent(new CustomEvent('casevault:sync-connected'));
+      });
+
+      eventSource.addEventListener('case_update', (e: MessageEvent) => {
+        try {
+          const payload = JSON.parse(e.data);
+          if (onCaseUpdate) {
+            onCaseUpdate(payload);
+          }
+          window.dispatchEvent(new CustomEvent('casevault:case-updated', { detail: payload }));
+        } catch (err) {
+          console.warn('[SSE] Event parse error:', err);
         }
-        window.dispatchEvent(new CustomEvent('casevault:case-updated', { detail: payload }));
-      } catch (err) {
-        console.warn('[SSE] Event parse error:', err);
-      }
-    });
+      });
 
-    eventSource.onerror = () => {
-      // Automatic reconnection handled by browser EventSource
-    };
-  } catch (err) {
-    console.warn('[SSE] EventSource init failed:', err);
-  }
+      eventSource.onerror = () => {
+        if (eventSource) {
+          eventSource.close();
+          eventSource = null;
+        }
+        if (!isClosed && !reconnectTimer) {
+          reconnectTimer = setTimeout(() => {
+            reconnectTimer = null;
+            connect();
+          }, 2000);
+        }
+      };
+    } catch (err) {
+      console.warn('[SSE] EventSource init failed:', err);
+      if (!isClosed && !reconnectTimer) {
+        reconnectTimer = setTimeout(() => {
+          reconnectTimer = null;
+          connect();
+        }, 2000);
+      }
+    }
+  };
+
+  connect();
 
   return () => {
+    isClosed = true;
+    if (reconnectTimer) clearTimeout(reconnectTimer);
     if (eventSource) {
       eventSource.close();
     }
