@@ -222,9 +222,25 @@ casesRouter.get('/', authenticateJwt, async (req: Request, res: Response) => {
       if (!stored) {
         return {
           ...row,
+          forensicRequests: row.forensicRequests || row.forensic_requests || [],
+          forensic_requests: row.forensic_requests || row.forensicRequests || [],
+          courtRecords: row.courtRecords || row.court_records || [],
+          court_records: row.court_records || row.courtRecords || [],
+          repositoryDocuments: repoDocs || [],
           documents: mergeCaseDocuments(row.documents || [], repoDocs)
         };
       }
+      const forensicReqs = (stored.forensicRequests && stored.forensicRequests.length > 0)
+        ? stored.forensicRequests
+        : (stored.forensic_requests && stored.forensic_requests.length > 0)
+          ? stored.forensic_requests
+          : (row.forensicRequests || row.forensic_requests || []);
+      const courtRecs = (stored.courtRecords && stored.courtRecords.length > 0)
+        ? stored.courtRecords
+        : (stored.court_records && stored.court_records.length > 0)
+          ? stored.court_records
+          : (row.courtRecords || row.court_records || []);
+
       return {
         ...stored,
         ...row,
@@ -241,10 +257,14 @@ casesRouter.get('/', authenticateJwt, async (req: Request, res: Response) => {
             : row.fingerprintRecords || [],
         evidenceItems: (stored.evidence_items && stored.evidence_items.length > 0) ? stored.evidence_items : row.evidenceItems || [],
         evidence_items: stored.evidence_items || [],
+        forensicRequests: forensicReqs,
+        forensic_requests: forensicReqs,
+        courtRecords: courtRecs,
+        court_records: courtRecs,
         documents: mergeCaseDocuments(stored.documents || row.documents || [], repoDocs),
+        repositoryDocuments: repoDocs || [],
         timeline: (stored.timeline && stored.timeline.length > 0) ? stored.timeline : row.timeline || [],
-        investigationJournal: stored.investigationJournal || stored.investigation_journal || row.investigationJournal || [],
-        courtRecords: stored.courtRecords || stored.court_records || row.courtRecords || []
+        investigationJournal: stored.investigationJournal || stored.investigation_journal || row.investigationJournal || []
       };
     });
 
@@ -1809,25 +1829,17 @@ casesRouter.post('/:id/documents', uploadLimiter, authenticateJwt, repoUpload.si
     return;
   }
 
-  if (rawRole === 'ADMIN') {
-    res.status(403).json({
-      success: false,
-      error: 'Access Denied: System Administrators are restricted from modifying evidentiary case repository files.',
-    });
-    return;
-  }
-
-  if (!['POLICE', 'FORENSIC', 'LEGAL'].includes(rawRole)) {
+  if (!['POLICE', 'FORENSIC', 'LEGAL', 'ADMIN'].includes(rawRole)) {
     res.status(403).json({
       success: false,
       error: `Forbidden: Role '${user.role}' cannot upload case documents.`,
     });
     return;
   }
-  const canonicalRole = rawRole as 'POLICE' | 'FORENSIC' | 'LEGAL';
+  const canonicalRole = rawRole as 'POLICE' | 'FORENSIC' | 'LEGAL' | 'ADMIN';
 
   const { department, documentType, title, description, classification } = req.body;
-  const effectiveDept = (department ? department.toUpperCase().trim() : canonicalRole);
+  const effectiveDept = (department ? department.toUpperCase().trim() : (canonicalRole === 'ADMIN' ? 'POLICE' : canonicalRole));
 
   if (!documentType || !title) {
     res.status(400).json({
@@ -1837,16 +1849,22 @@ casesRouter.post('/:id/documents', uploadLimiter, authenticateJwt, repoUpload.si
     return;
   }
 
-  if (canonicalRole !== effectiveDept) {
-    res.status(403).json({
-      success: false,
-      error: `Departmental Isolation: Officers with role '${canonicalRole}' cannot upload documents to '${effectiveDept}' repository section.`,
-    });
-    return;
+  const normDocType = (documentType || '').toUpperCase().trim();
+  const POLICE_ALLOWED_FORENSIC = ['FORENSIC_REQUEST', 'FSL_REQUISITION', 'REQUISITION_LETTER', 'FORWARDING_MEMO', 'INVESTIGATION_RECORD'];
+
+  if (canonicalRole !== 'ADMIN' && canonicalRole !== effectiveDept) {
+    if (canonicalRole === 'POLICE' && effectiveDept === 'FORENSIC' && POLICE_ALLOWED_FORENSIC.some(t => normDocType.includes(t))) {
+      // Allowed: police forwarding letter to FSL section
+    } else {
+      res.status(403).json({
+        success: false,
+        error: `Departmental Isolation: Officers with role '${canonicalRole}' cannot upload documents to '${effectiveDept}' repository section.`,
+      });
+      return;
+    }
   }
 
   // Enforce document-type authorization per department
-  const normDocType = (documentType || '').toUpperCase().trim();
   const POLICE_DOC_TYPES = [
     'FIR', 'POLICE_REPORT', 'CASE_DIARY', 'WITNESS_STATEMENT', 'ACCUSED_STATEMENT',
     'ARREST_MEMO', 'PANCHNAMA', 'CHARGE_SHEET', 'SEIZURE_MEMO', 'INVESTIGATION_REPORT'
@@ -1859,8 +1877,6 @@ casesRouter.post('/:id/documents', uploadLimiter, authenticateJwt, repoUpload.si
     'COURT_FILING', 'REMAND_ORDER', 'BAIL_ORDER', 'COURT_ORDER',
     'HEARING_RECORD', 'JUDGMENT', 'LEGAL_NOTICE', 'WARRANT', 'SUMMONS', 'PROSECUTION_FILING'
   ];
-
-  const POLICE_ALLOWED_FORENSIC = ['FORENSIC_REQUEST', 'FSL_REQUISITION', 'REQUISITION_LETTER'];
   if (canonicalRole === 'POLICE' && !POLICE_ALLOWED_FORENSIC.includes(normDocType) && (FORENSIC_DOC_TYPES.includes(normDocType) || LEGAL_DOC_TYPES.includes(normDocType))) {
     res.status(403).json({
       success: false,

@@ -1,5 +1,27 @@
 [
   {
+    "id": "GRANT-MTXXFRVB-279BEE",
+    "case_id": "CASE-OWNER-1789189844692",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-12T05:10:44.951Z",
+    "expires_at": "2026-09-14T05:10:44.951Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-12T05:10:44.989Z"
+  },
+  {
+    "id": "GRANT-MTXXETC5-C5AECF",
+    "case_id": "CASE-OWNER-1789189799995",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-12T05:10:00.196Z",
+    "expires_at": "2026-09-14T05:10:00.196Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-12T05:10:00.333Z"
+  },
+  {
     "id": "GRANT-MTXWAWV4-E47F72",
     "case_id": "CASE-OWNER-1789187938310",
     "user_badge": "MH-POL-102",

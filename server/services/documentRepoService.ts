@@ -157,35 +157,6 @@ if (!fs.existsSync(STORAGE_ROOT)) {
 
 export class DocumentRepoService {
   /**
-   * Retrieves all repository documents for a given case docket.
-   */
-  async getCaseDocuments(caseId: string): Promise<CaseRepoDocument[]> {
-    try {
-      const result = await pool.query(
-        `SELECT id, case_id as "caseId", title, document_type as "documentType", 
-                department, description, uploaded_by as "uploadedBy", 
-                uploaded_by_badge as "uploadedByBadge", uploaded_at as "uploadedAt", 
-                version, file_size as "fileSize", mime_type as "mimeType", 
-                storage_uri as "storageUri", sha256_hash as "sha256Hash", 
-                digital_signature as "digitalSignature", is_verified as "isVerified", 
-                blockchain_tx_id as "blockchainTxId", classification, 
-                previous_version_hash as "previousVersionHash"
-         FROM case_repository_documents
-         WHERE case_id = $1
-         ORDER BY version ASC, uploaded_at ASC`,
-        [caseId]
-      );
-      if (result.rows.length > 0) {
-        return result.rows;
-      }
-    } catch {
-      // Database table may not exist yet in demo environment; fall back to memory
-    }
-
-    return inMemoryRepo.get(caseId) || [];
-  }
-
-  /**
    * Full pipeline:
    * 1. Document validation (MIME + Magic Bytes + Filename)
    * 2. Antivirus Scan (ClamAV + Heuristic)

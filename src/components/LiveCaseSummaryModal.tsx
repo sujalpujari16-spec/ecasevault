@@ -87,11 +87,11 @@ export const LiveCaseSummaryContent: React.FC<LiveCaseSummaryContentProps> = ({
   const atLargeCount = suspectsList.filter(s => s.status !== "Arrested" && s.status !== "Under Judicial Remand").length;
 
   const witnessesList = caseItem.witnesses || [];
-  const sec161Statements = witnessesList.filter(w => w.statement && w.statement.length > 20).length;
+  const sec161Statements = witnessesList.filter(w => (w as any).statement || (w as any).statementSummary).length;
   
   const courtDocs = caseItem.courtRecords || [];
   const warrantsList = caseItem.warrants || [];
-  const activeWarrants = warrantsList.filter(w => w.status === "Active" || w.status === "Issued" || (w as any).warrantStatus === "ACTIVE").length;
+  const activeWarrants = warrantsList.filter(w => (w.status as string) === "Active" || (w.status as string) === "Issued" || w.status === "ACTIVE" || (w as any).warrantStatus === "ACTIVE").length;
   const hearingsList = caseItem.hearings || [];
   
   const diaryEntries = caseItem.investigationJournal || [];
@@ -611,10 +611,10 @@ Generated Live via e-CASEVAULT Intranet: ${new Date().toLocaleString("en-IN")} I
                       <div key={w.id} className="py-2 flex items-center justify-between">
                         <div>
                           <span className="font-bold text-slate-900">{w.name}</span>
-                          <p className="text-[10px] text-slate-500">Type: {w.type} • Contact: {w.contact || "Recorded"}</p>
+                          <p className="text-[10px] text-slate-500">Status: {w.statementStatus} • Officer: {w.recordedBy || "Recorded"}</p>
                         </div>
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-800">
-                          {w.statement ? "Statement Filed" : "Pending Examination"}
+                          {(w as any).statement || w.statementSummary ? "Statement Filed" : "Pending Examination"}
                         </span>
                       </div>
                     ))}

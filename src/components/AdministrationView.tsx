@@ -56,6 +56,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedStationFilter, setSelectedStationFilter] = useState('ALL');
+  const [selectedRoleFilter, setSelectedRoleFilter] = useState<'ALL' | 'POLICE' | 'FORENSIC' | 'LEGAL' | 'AUDITOR'>('ALL');
 
   // Case Oversight & IO Reassignment Filters
   const [caseSearchQuery, setCaseSearchQuery] = useState('');
@@ -214,6 +215,12 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
     }
   };
 
+  const handleOpenEnlistModal = (role: PoliceRole) => {
+    soundEffects.playSnap();
+    handleRoleChange(role);
+    setIsAddModalOpen(true);
+  };
+
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -283,6 +290,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
           name: o.name || o.full_name || o.username,
           badgeNo: o.badgeNo || o.badge_no,
           rank: o.rank,
+          role: (o.role || 'POLICE').toUpperCase() as PoliceRole,
           station: o.station || o.station_id || 'Andheri Police Station',
           unit: o.department || 'Investigation Wing',
           contact: o.contact || '+91 98200 XXXXX',
@@ -383,8 +391,9 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
       o.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       o.badgeNo.toLowerCase().includes(searchQuery.toLowerCase()) ||
       o.station.toLowerCase().includes(searchQuery.toLowerCase());
-    if (selectedStationFilter === 'ALL') return matchesSearch;
-    return matchesSearch && o.station.includes(selectedStationFilter);
+    const matchesStation = selectedStationFilter === 'ALL' || o.station.includes(selectedStationFilter);
+    const matchesRole = selectedRoleFilter === 'ALL' || (o.role && o.role.toUpperCase() === selectedRoleFilter);
+    return matchesSearch && matchesStation && matchesRole;
   });
 
   return (
@@ -405,28 +414,39 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={() => handleOpenEnlistModal('POLICE')}
+            className="px-3.5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs rounded-xl shadow-xs flex items-center gap-1.5 cursor-pointer transition-all"
+          >
+            <ShieldCheck className="w-4 h-4" />
+            <span>+ Enlist Police Officer</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => handleOpenEnlistModal('FORENSIC')}
+            className="px-3.5 py-2 bg-purple-700 hover:bg-purple-800 text-white font-bold text-xs rounded-xl shadow-xs flex items-center gap-1.5 cursor-pointer transition-all"
+          >
+            <span>🔬 + Enlist Forensic Expert</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => handleOpenEnlistModal('LEGAL')}
+            className="px-3.5 py-2 bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs rounded-xl shadow-xs flex items-center gap-1.5 cursor-pointer transition-all"
+          >
+            <span>⚖️ + Enlist Lawyer / Prosecutor</span>
+          </button>
           <button
             type="button"
             onClick={() => {
               soundEffects.playSnap();
               setIsAddStationModalOpen(true);
             }}
-            className="px-3.5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs rounded-xl shadow-xs flex items-center gap-2 cursor-pointer transition-all"
+            className="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl shadow-xs flex items-center gap-1.5 cursor-pointer transition-all"
           >
             <Building2 className="w-4 h-4" />
-            <span>Add Police Station</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              soundEffects.playSnap();
-              setIsAddModalOpen(true);
-            }}
-            className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl shadow-xs flex items-center gap-2 cursor-pointer transition-all"
-          >
-            <Plus className="w-4 h-4" />
-            <span>Enlist New Officer</span>
+            <span>+ Add Police Station</span>
           </button>
         </div>
       </div>
@@ -531,6 +551,45 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
                 <option key={s.id || s.name} value={s.name}>{s.name}</option>
               ))}
             </select>
+          </div>
+
+          {/* Quick Institutional Role Filters */}
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setSelectedRoleFilter('ALL')}
+              className={"px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer " + (selectedRoleFilter === 'ALL' ? 'bg-slate-900 text-white shadow-xs' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50')}
+            >
+              All Members ({officers.length})
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedRoleFilter('POLICE')}
+              className={"px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 " + (selectedRoleFilter === 'POLICE' ? 'bg-blue-700 text-white shadow-xs' : 'bg-white text-slate-600 border border-slate-200 hover:bg-blue-50')}
+            >
+              <span>👮 Police Officers ({officers.filter(o => !o.role || o.role === 'POLICE').length})</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedRoleFilter('FORENSIC')}
+              className={"px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 " + (selectedRoleFilter === 'FORENSIC' ? 'bg-purple-700 text-white shadow-xs' : 'bg-white text-slate-600 border border-slate-200 hover:bg-purple-50')}
+            >
+              <span>🔬 Forensic Scientists ({officers.filter(o => o.role === 'FORENSIC').length})</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedRoleFilter('LEGAL')}
+              className={"px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 " + (selectedRoleFilter === 'LEGAL' ? 'bg-amber-700 text-white shadow-xs' : 'bg-white text-slate-600 border border-slate-200 hover:bg-amber-50')}
+            >
+              <span>⚖️ Lawyers & Prosecutors ({officers.filter(o => o.role === 'LEGAL').length})</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedRoleFilter('AUDITOR')}
+              className={"px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 " + (selectedRoleFilter === 'AUDITOR' ? 'bg-emerald-700 text-white shadow-xs' : 'bg-white text-slate-600 border border-slate-200 hover:bg-emerald-50')}
+            >
+              <span>🛡️ Vigilance Auditors ({officers.filter(o => o.role === 'AUDITOR').length})</span>
+            </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -1023,12 +1082,42 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
               </button>
             </div>
 
+            {/* Prominent Institutional Role Switcher Tabs */}
+            <div className="grid grid-cols-3 sm:grid-cols-4 gap-1.5 p-1.5 bg-slate-100 rounded-xl">
+              <button
+                type="button"
+                onClick={() => handleRoleChange('POLICE')}
+                className={"py-2 px-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer " + (selectedRole === 'POLICE' ? 'bg-blue-700 text-white shadow-xs' : 'text-slate-600 hover:bg-slate-200')}
+              >
+                <span>👮 Police</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleRoleChange('FORENSIC')}
+                className={"py-2 px-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer " + (selectedRole === 'FORENSIC' ? 'bg-purple-700 text-white shadow-xs' : 'text-slate-600 hover:bg-slate-200')}
+              >
+                <span>🔬 Forensic</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleRoleChange('LEGAL')}
+                className={"py-2 px-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer " + (selectedRole === 'LEGAL' ? 'bg-amber-700 text-white shadow-xs' : 'text-slate-600 hover:bg-slate-200')}
+              >
+                <span>⚖️ Lawyer</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleRoleChange('AUDITOR')}
+                className={"py-2 px-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer " + (selectedRole === 'AUDITOR' ? 'bg-emerald-700 text-white shadow-xs' : 'text-slate-600 hover:bg-slate-200')}
+              >
+                <span>🛡️ Auditor</span>
+              </button>
+            </div>
+
             <form onSubmit={handleCreateOfficer} className="space-y-3.5 text-xs">
               {/* Officer Photograph Upload */}
               <div className="space-y-1.5">
-                <label className="block font-bold text-slate-800">
-                  Officer Official Photograph / Service Portrait
-                </label>
+                <label className="block font-bold text-slate-800">{selectedRole === "FORENSIC" ? "Forensic Scientist Official Portrait / Lab ID" : selectedRole === "LEGAL" ? "Advocate / Public Prosecutor Bar Portrait" : "Officer Official Photograph / Service Portrait"}</label>
                 {officerPhotoUrl ? (
                   <div className="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl">
                     <img
@@ -1083,7 +1172,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
               </div>
 
               <div className="space-y-1">
-                <label className="font-bold text-slate-800">Officer Full Name *</label>
+                <label className="font-bold text-slate-800">{selectedRole === "FORENSIC" ? "Forensic Expert Full Name *" : selectedRole === "LEGAL" ? "Prosecutor / Lawyer Full Name *" : "Officer Full Name *"}</label>
                 <input
                   type="text"
                   value={officerName}
@@ -1126,7 +1215,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
                 </div>
 
                 <div className="space-y-1">
-                  <label className="font-bold text-slate-800">Badge / Service Number *</label>
+                  <label className="font-bold text-slate-800">{selectedRole === "FORENSIC" ? "FSL Accession / Scientist ID *" : selectedRole === "LEGAL" ? "Bar Council / Prosecution ID *" : "Badge / Service Number *"}</label>
                   <input
                     type="text"
                     value={badgeNumber}
@@ -1234,17 +1323,36 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="font-bold text-slate-800">Station Posting *</label>
+                  <label className="font-bold text-slate-800">
+                    {selectedRole === 'FORENSIC' ? 'Forensic Laboratory Posting *' :
+                     selectedRole === 'LEGAL' ? 'Court / Directorate Posting *' :
+                     selectedRole === 'AUDITOR' ? 'Vigilance Bureau Headquarters *' :
+                     'Station Posting *'}
+                  </label>
                   <select
                     value={stationName}
                     onChange={(e) => setStationName(e.target.value)}
                     className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 outline-none focus:bg-white focus:border-blue-600"
                   >
-                    {stationsList.map((stn) => (
-                      <option key={stn.id || stn.name} value={stn.name}>
-                        {stn.name}
-                      </option>
-                    ))}
+                    {selectedRole === 'FORENSIC' ? (
+                      getStoredFslLabs().map((lab) => (
+                        <option key={lab.id || lab.name} value={lab.name}>
+                          {lab.name} ({lab.city})
+                        </option>
+                      ))
+                    ) : selectedRole === 'LEGAL' ? (
+                      getStoredCourts().map((court) => (
+                        <option key={court.id || court.name} value={court.name}>
+                          {court.name} ({court.district})
+                        </option>
+                      ))
+                    ) : (
+                      stationsList.map((stn) => (
+                        <option key={stn.id || stn.name} value={stn.name}>
+                          {stn.name}
+                        </option>
+                      ))
+                    )}
                   </select>
                 </div>
 

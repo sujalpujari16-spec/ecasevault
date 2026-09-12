@@ -11,6 +11,7 @@ import {
 import { CaseFile, UserSession, DocumentRecord, EvidenceItemRecord } from '../types';
 import { generateSimulatedSHA256 } from '../utils/policeWorkflow';
 import { soundEffects } from './AudioEffects';
+import { getAuthToken } from '../services/apiClient';
 
 interface UploadForensicReportModalProps {
   isOpen: boolean;
@@ -87,9 +88,44 @@ export const UploadForensicReportModal: React.FC<UploadForensicReportModalProps>
     const docId = `DOC-FSL-${Date.now().toString().slice(-6)}`;
     const hash = generateSimulatedSHA256((reportFile?.name || 'forensic-report') + Date.now());
 
+    let uploadedRepoDoc: any = null;
+    let finalFileUrl = filePreview || undefined;
+
+    try {
+      const formData = new FormData();
+      formData.append('department', 'FORENSIC');
+      formData.append('documentType', 'FSL_REPORT');
+      formData.append('title', `${reportType} — ${selectedCase.firNumber}`);
+      formData.append('description', `Scientific examination report by ${analystName} (${labName}). Conclusion: ${conclusion}. Findings: ${findings.slice(0, 150)}`);
+      formData.append('classification', 'CONFIDENTIAL');
+
+      if (reportFile) {
+        formData.append('file', reportFile);
+      } else {
+        const reportContent = `%PDF-1.4 Official FSL Examination Report\nCase: ${selectedCase.id} (${selectedCase.firNumber})\nFacility: ${labName}\nExaminer: ${analystName}\nReport: ${reportType}\nConclusion: ${conclusion}\nObservations: ${findings}\nTimestamp: ${timestamp}`;
+        const blob = new Blob([reportContent], { type: 'application/pdf' });
+        formData.append('file', blob, `${reportType.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`);
+      }
+
+      const res = await fetch(`/api/cases/${selectedCase.id}/documents`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${getAuthToken() || ''}`
+        },
+        body: formData
+      });
+      const data = await res.json();
+      if (data.success && data.document) {
+        uploadedRepoDoc = data.document;
+        finalFileUrl = `/api/documents/${data.document.id}/download`;
+      }
+    } catch (uploadErr) {
+      console.warn('[FORENSIC UPLOAD] Network upload note, proceeding with docket attachment:', uploadErr);
+    }
+
     // 1. Create Forensic DocumentRecord
     const newDoc: DocumentRecord = {
-      id: docId,
+      id: uploadedRepoDoc?.id || docId,
       docNumber: `FSL-MH-${new Date().getFullYear()}-${Date.now().toString().slice(-5)}`,
       caseId: selectedCase.id,
       title: `${reportType} (${selectedCase.firNumber})`,
@@ -118,7 +154,7 @@ export const UploadForensicReportModal: React.FC<UploadForensicReportModalProps>
         `Finding Conclusion: ${conclusion}\n\n` +
         `Detailed Observations:\n${findings}\n`,
       attachmentsCount: reportFile ? 1 : 0,
-      fileUrl: filePreview || undefined,
+      fileUrl: finalFileUrl,
       fileName: reportFile?.name || `${reportType.replace(/ /g, '_')}.pdf`,
       fileSize: reportFile?.size || 204800,
       mimeType: reportFile?.type || 'application/pdf'
@@ -150,11 +186,42 @@ export const UploadForensicReportModal: React.FC<UploadForensicReportModalProps>
       return req;
     });
 
+    // Ensure at least one evidence item exists if case was empty
+    let finalEvidenceItems = updatedEvidenceItems;
+    if (finalEvidenceItems.length === 0) {
+      const fallbackEvidence: EvidenceItemRecord = {
+        id: `EVD-${selectedCase.id.slice(-4)}-SPECIMEN`,
+        evidenceTag: `FSL-SPEC-${Date.now().toString().slice(-4)}`,
+        category: 'Digital Evidence & Documentation' as any,
+        description: `Scientific examination specimen for ${reportType}`,
+        collectionDate: timestamp.substring(0, 10),
+        collectionLocation: labName,
+        collectingOfficer: analystName,
+        collectingOfficerBadge: session.badgeNo || 'FSL-ANALYST',
+        chainOfCustody: [
+          {
+            id: `COC-FSL-${Date.now()}`,
+            timestamp: `${timestamp.substring(0, 10)} 10:00 IST`,
+            action: 'EXAMINED_BY_FSL',
+            fromCustodian: 'Maharashtra Police Evidence Malkhana',
+            toCustodian: `${analystName} (${labName})`,
+            purpose: `Forensic Analysis: ${reportType}`,
+            verificationHash: hash
+          }
+        ],
+        sha256Hash: hash,
+        status: 'Report Received',
+        notes: `Certified report submitted under Section 293 CrPC: ${conclusion}`
+      };
+      finalEvidenceItems = [fallbackEvidence];
+    }
+
     // 4. Update case object
     const updatedCase: CaseFile = {
       ...selectedCase,
       documents: [newDoc, ...(selectedCase.documents || [])],
-      evidenceItems: updatedEvidenceItems,
+      repositoryDocuments: uploadedRepoDoc ? [uploadedRepoDoc, ...(selectedCase.repositoryDocuments || []).filter((d: any) => d.id !== uploadedRepoDoc.id)] : selectedCase.repositoryDocuments,
+      evidenceItems: finalEvidenceItems,
       forensicRequests: updatedForensicRequests,
       timeline: [
         {

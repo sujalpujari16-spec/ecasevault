@@ -17,6 +17,7 @@ import {
 import { CaseFile, UserSession, CourtDocumentRecord, DocumentRecord, WitnessRecord } from '../types';
 import { generateSimulatedSHA256 } from '../utils/policeWorkflow';
 import { soundEffects } from './AudioEffects';
+import { getAuthToken } from '../services/apiClient';
 
 export type LegalModalMode = 'HEARING' | 'STATEMENT' | 'ORDER';
 
@@ -122,6 +123,41 @@ export const AddCourtDocumentModal: React.FC<AddCourtDocumentModalProps> = ({
     const docId = `CRT-DOC-${Date.now().toString().slice(-6)}`;
     const hash = generateSimulatedSHA256((uploadedFile?.name || 'court-document') + Date.now());
 
+    let uploadedRepoDoc: any = null;
+    let finalFileUrl = filePreview || undefined;
+
+    try {
+      const formData = new FormData();
+      formData.append('department', 'LEGAL');
+      formData.append('documentType', modalMode === 'ORDER' ? 'COURT_ORDER' : modalMode === 'BAIL' ? 'BAIL_ORDER' : 'COURT_FILING');
+      formData.append('title', modalMode === 'ORDER' ? orderTitle || `Judicial Order — ${selectedCase.firNumber}` : modalMode === 'BAIL' ? `Bail Ruling (${bailApplicantName}) — ${selectedCase.firNumber}` : `Hearing Record (${hearingDate}) — ${selectedCase.firNumber}`);
+      formData.append('description', modalMode === 'ORDER' ? orderText.slice(0, 150) : modalMode === 'BAIL' ? bailRemarks.slice(0, 150) : hearingSummary.slice(0, 150));
+      formData.append('classification', 'CONFIDENTIAL');
+
+      if (uploadedFile) {
+        formData.append('file', uploadedFile);
+      } else {
+        const courtContent = `%PDF-1.4 Judicial Order & Court Filing\nCourt: ${courtName}\nRC Number: ${rcNumber}\nJudge: ${judgeName}\nProsecutor: ${publicProsecutor}\nTimestamp: ${timestamp}`;
+        const blob = new Blob([courtContent], { type: 'application/pdf' });
+        formData.append('file', blob, `court_document_${Date.now()}.pdf`);
+      }
+
+      const res = await fetch(`/api/cases/${selectedCase.id}/documents`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${getAuthToken() || ''}`
+        },
+        body: formData
+      });
+      const data = await res.json();
+      if (data.success && data.document) {
+        uploadedRepoDoc = data.document;
+        finalFileUrl = `/api/documents/${data.document.id}/download`;
+      }
+    } catch (uploadErr) {
+      console.warn('[LEGAL UPLOAD] Cloud upload notice, proceeding with docket attachment:', uploadErr);
+    }
+
     let newCourtDoc: CourtDocumentRecord;
     let newRepoDoc: DocumentRecord;
     let updatedCase: CaseFile = { ...selectedCase };
@@ -152,7 +188,7 @@ export const AddCourtDocumentModal: React.FC<AddCourtDocumentModalProps> = ({
         orderSummary: `Hearing Stage: ${hearingStage.replace(/_/g, ' ')}\nPresiding: ${judgeName}\n\nProceedings & Directives:\n${hearingSummary}\nNext Date: ${nextHearingDate || 'Adjourned Sine Die'}`,
         documentHash: hash,
         isCourtCertified: true,
-        fileUrl: filePreview || undefined,
+        fileUrl: finalFileUrl,
         fileName: uploadedFile?.name || `hearing_record_${hearingDate}.pdf`,
         fileSize: uploadedFile?.size || 102400
       };
@@ -188,7 +224,7 @@ export const AddCourtDocumentModal: React.FC<AddCourtDocumentModalProps> = ({
           `DAILY ORDER & PROCEEDINGS:\n${hearingSummary}\n\n` +
           `NEXT HEARING SCHEDULED: ${nextHearingDate || 'TBD'}\n`,
         attachmentsCount: uploadedFile ? 1 : 0,
-        fileUrl: filePreview || undefined,
+        fileUrl: finalFileUrl,
         fileName: uploadedFile?.name || `hearing_order_${hearingDate}.pdf`,
         fileSize: uploadedFile?.size || 102400,
         mimeType: uploadedFile?.type || 'application/pdf'
@@ -259,7 +295,7 @@ export const AddCourtDocumentModal: React.FC<AddCourtDocumentModalProps> = ({
         orderSummary: `Nature: ${stmtLabel}\nDeponent: ${deponentName} (${deponentRole})\nRecording Magistrate: ${judgeName}\nOath Administered: ${isOathAdministered ? 'Yes' : 'No'}\n\nStatement Content:\n${statementText}`,
         documentHash: hash,
         isCourtCertified: true,
-        fileUrl: filePreview || undefined,
+        fileUrl: finalFileUrl,
         fileName: uploadedFile?.name || `statement_${deponentName.replace(/ /g, '_')}.pdf`,
         fileSize: uploadedFile?.size || 102400
       };
@@ -294,7 +330,7 @@ export const AddCourtDocumentModal: React.FC<AddCourtDocumentModalProps> = ({
           `DATE RECORDED: ${statementDate}\n\n` +
           `STATEMENT TRANSCRIPT:\n${statementText}\n`,
         attachmentsCount: uploadedFile ? 1 : 0,
-        fileUrl: filePreview || undefined,
+        fileUrl: finalFileUrl,
         fileName: uploadedFile?.name || `signed_statement_${deponentName.replace(/ /g, '_')}.pdf`,
         fileSize: uploadedFile?.size || 102400,
         mimeType: uploadedFile?.type || 'application/pdf'
@@ -379,7 +415,7 @@ export const AddCourtDocumentModal: React.FC<AddCourtDocumentModalProps> = ({
         orderSummary: orderSummary + (docType === 'FINAL_JUDGMENT' && sentenceDetails ? `\nVerdict: ${verdictOutcome}. Sentence: ${sentenceDetails}` : ''),
         documentHash: hash,
         isCourtCertified: true,
-        fileUrl: filePreview || undefined,
+        fileUrl: finalFileUrl,
         fileName: uploadedFile?.name || `${docType.toLowerCase()}_signed.pdf`,
         fileSize: uploadedFile?.size || 102400
       };
@@ -415,7 +451,7 @@ export const AddCourtDocumentModal: React.FC<AddCourtDocumentModalProps> = ({
           `SUMMARY OF JUDICIAL PRONOUNCEMENT / DIRECTIVES:\n${orderSummary}\n` +
           (docType === 'FINAL_JUDGMENT' ? `\nVERDICT: ${verdictOutcome}\nSENTENCE / DISPOSAL: ${sentenceDetails}\n` : ''),
         attachmentsCount: uploadedFile ? 1 : 0,
-        fileUrl: filePreview || undefined,
+        fileUrl: finalFileUrl,
         fileName: uploadedFile?.name || `${docType.toLowerCase()}.pdf`,
         fileSize: uploadedFile?.size || 102400,
         mimeType: uploadedFile?.type || 'application/pdf'
@@ -448,6 +484,9 @@ export const AddCourtDocumentModal: React.FC<AddCourtDocumentModalProps> = ({
       };
     }
 
+    if (uploadedRepoDoc) {
+      updatedCase.repositoryDocuments = [uploadedRepoDoc, ...(updatedCase.repositoryDocuments || []).filter((d: any) => d.id !== uploadedRepoDoc.id)];
+    }
     onSaveCourtDocument(updatedCase, finalTitle);
     window.dispatchEvent(new CustomEvent('casevault:file-updated', { detail: { caseId: selectedCase.id } }));
     window.dispatchEvent(new CustomEvent('casevault:case-updated', { detail: { caseId: selectedCase.id } }));

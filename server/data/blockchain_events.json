@@ -3417,5 +3417,184 @@
       "newIOBadge": "MH-POL-301",
       "reason": "SIT Escalation"
     }
+  },
+  {
+    "eventId": "EVT-1789189800181-B5EE55",
+    "caseId": "CASE-OWNER-1789189799995",
+    "entityId": "REQ-MTXXETBO-17168D",
+    "entityType": "ACCESS",
+    "action": "ACCESS_REQUESTED",
+    "actorId": "MH-POL-102",
+    "actorName": "Officer B (Worli Colleague)",
+    "timestamp": "2026-09-12T05:10:00.181Z",
+    "dataHash": "6f429168a4aa9acc84432d0879e65c15bf3e5efad9cac4d18ade202445749ecc",
+    "previousHash": "cde4e06465b0002e6bc07cd1e0ffef33ad2dac84ddfb005043796ee7b34ec04f",
+    "eventHash": "efbb8bd1d6c69b39e5a71f2279b2a074b470164566c75c2b3c383684c5e003ca",
+    "blockchainTxId": "tx-fabric-chain-77uL0dbGmznlpx8iebKgdLRwFkVmx1wr",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "requestId": "REQ-MTXXETBO-17168D",
+      "reason": "Assisting in cyber forensics recovery of stolen encrypted drives"
+    }
+  },
+  {
+    "eventId": "EVT-1789189800199-E19384",
+    "caseId": "CASE-OWNER-1789189799995",
+    "entityId": "REQ-MTXXETBO-17168D",
+    "entityType": "ACCESS",
+    "action": "ACCESS_APPROVED",
+    "actorId": "MH-ADM-001",
+    "actorName": "Commissioner of Police (Admin)",
+    "timestamp": "2026-09-12T05:10:00.199Z",
+    "dataHash": "c9fe95be8c9ff8b936c5096d5fc4222995ddf228212a67d60e0732cf08076ce4",
+    "previousHash": "efbb8bd1d6c69b39e5a71f2279b2a074b470164566c75c2b3c383684c5e003ca",
+    "eventHash": "c0c3221f2b7ea1a4b8f810dc487af123310876ae3c64711887aee503dfb3b316",
+    "blockchainTxId": "tx-fabric-chain-wMMiHyt-oaS4-BDcSHrxIzEIdq48ZHEY",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "requestId": "REQ-MTXXETBO-17168D",
+      "grantedToBadge": "MH-POL-102",
+      "expiresAt": "2026-09-14T05:10:00.196Z"
+    }
+  },
+  {
+    "eventId": "EVT-1789189800640-BFBD4E",
+    "caseId": "CASE-OWNER-1789189799995",
+    "entityId": "CASE-OWNER-1789189799995",
+    "entityType": "CASE",
+    "action": "CASE_REASSIGNED",
+    "actorId": "MH-ADM-001",
+    "actorName": "Commissioner of Police (Admin)",
+    "timestamp": "2026-09-12T05:10:00.640Z",
+    "dataHash": "935f4a6dedc52d8146764e99cb85f721b1ec4262d5efb44e1f73e9a0837bcb0b",
+    "previousHash": "c0c3221f2b7ea1a4b8f810dc487af123310876ae3c64711887aee503dfb3b316",
+    "eventHash": "337f41425c977437c125bcdfa85960b9177249af7beade55f34e21cdde5d0a91",
+    "blockchainTxId": "tx-fabric-chain-M39BQlyXdDfBJbzfqFlguRdySa976t5V",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "caseId": "CASE-OWNER-1789189799995",
+      "previousIOBadge": "MH-POL-101",
+      "newIOBadge": "MH-POL-301",
+      "reason": "SIT Escalation"
+    }
+  },
+  {
+    "eventId": "EVT-1789189844599-35B88B",
+    "caseId": "CASE-TEST-1789189844593",
+    "entityId": "FIR-DOC-1789189844593",
+    "entityType": "DOCUMENT",
+    "action": "DOCUMENT_UPLOADED",
+    "actorId": "MH-POL-TEST",
+    "actorName": "Testing Officer",
+    "timestamp": "2026-09-12T05:10:44.593Z",
+    "fileHash": "368dfee6947f5d502c65babd82670c53cf60461d3e2d89c1d6204adb96daaca0",
+    "dataHash": "9bed0dfc11a24227d125f7a85cdffb5db7ef51ac906acb3966c04f9199d7db63",
+    "previousHash": "337f41425c977437c125bcdfa85960b9177249af7beade55f34e21cdde5d0a91",
+    "eventHash": "91b8e58afe57d9aa8f63db6419c4405639daad5c3875d329d049a61e9fc6e461",
+    "blockchainTxId": "tx-fabric-chain-kbjliv5X2aqPY9tkGcRAVjnarVw4ddMp",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "fileName": "fir_scan.pdf",
+      "fileSize": 49
+    }
+  },
+  {
+    "eventId": "EVT-1789189844612-C40285",
+    "caseId": "CASE-TEST-1789189844593",
+    "entityId": "CASE-TEST-1789189844593",
+    "entityType": "CASE",
+    "action": "CASE_CREATED",
+    "actorId": "MH-POL-TEST",
+    "actorName": "Testing Officer",
+    "timestamp": "2026-09-12T05:10:44.612Z",
+    "dataHash": "069d69ed17c1b6be703eb0ad085754900771241caeb17bf2b49a97279885e2e6",
+    "previousHash": "91b8e58afe57d9aa8f63db6419c4405639daad5c3875d329d049a61e9fc6e461",
+    "eventHash": "028c9487bb72a8f1e202f8b44b1382f11fac711e905f06c2d8c202770653ed03",
+    "blockchainTxId": "tx-fabric-chain-AoyUh7tyqPHiAvi0SxOC8R-scR6QXwbC",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "firNumber": "FIR/TEST/2026/01",
+      "crimeType": "Investigation"
+    }
+  },
+  {
+    "eventId": "EVT-1789189844617-6B2362",
+    "caseId": "CASE-TEST-1789189844593",
+    "entityId": "EVD-1789189844617",
+    "entityType": "EVIDENCE",
+    "action": "EVIDENCE_CREATED",
+    "actorId": "MH-POL-TEST",
+    "actorName": "Testing Officer",
+    "timestamp": "2026-09-12T05:10:44.617Z",
+    "fileHash": "489bf777c95d9f87767e7f86670ea42e779fc8e691bfd70abb9cecd837c1213a",
+    "dataHash": "cf6259d38e8f1c883c16883437437a86210cbcbd4d27326a18e7cdab87db9c26",
+    "previousHash": "028c9487bb72a8f1e202f8b44b1382f11fac711e905f06c2d8c202770653ed03",
+    "eventHash": "38501517d90e54e73ec4f96877b047ef88cb2d9473f13a485778feb0522e3003",
+    "blockchainTxId": "tx-fabric-chain-OFAVF9kOVOc-xPlod7BH74jLLZRz8TpI",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "evidenceTag": "TAG-TEST-001",
+      "category": "Digital Storage"
+    }
+  },
+  {
+    "eventId": "EVT-1789189844939-681FEF",
+    "caseId": "CASE-OWNER-1789189844692",
+    "entityId": "REQ-MTXXFRUY-3BA99D",
+    "entityType": "ACCESS",
+    "action": "ACCESS_REQUESTED",
+    "actorId": "MH-POL-102",
+    "actorName": "Officer B (Worli Colleague)",
+    "timestamp": "2026-09-12T05:10:44.939Z",
+    "dataHash": "1b1ed729a7a56f81b9dc34aa3b064f7976e206a184c533b8464da6379f514f76",
+    "previousHash": "38501517d90e54e73ec4f96877b047ef88cb2d9473f13a485778feb0522e3003",
+    "eventHash": "b3f7deb57717e01bde857650bf3863c1799ae1206604e5443fd05ad71224db87",
+    "blockchainTxId": "tx-fabric-chain-s_fetXcX4BvehXZQvzhjwXma4SBmBOVE",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "requestId": "REQ-MTXXFRUY-3BA99D",
+      "reason": "Assisting in cyber forensics recovery of stolen encrypted drives"
+    }
+  },
+  {
+    "eventId": "EVT-1789189844952-C13244",
+    "caseId": "CASE-OWNER-1789189844692",
+    "entityId": "REQ-MTXXFRUY-3BA99D",
+    "entityType": "ACCESS",
+    "action": "ACCESS_APPROVED",
+    "actorId": "MH-ADM-001",
+    "actorName": "Commissioner of Police (Admin)",
+    "timestamp": "2026-09-12T05:10:44.952Z",
+    "dataHash": "670de48a3ef8728ad09811731119e3a401420be5a09c331461931a456f696437",
+    "previousHash": "b3f7deb57717e01bde857650bf3863c1799ae1206604e5443fd05ad71224db87",
+    "eventHash": "524a9e597b9d115302e10b45b93b90174d737339dd3858a6a596e9f63606aa16",
+    "blockchainTxId": "tx-fabric-chain-UkqeWXudEVMC4QtFuTuQF01zczndOFim",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "requestId": "REQ-MTXXFRUY-3BA99D",
+      "grantedToBadge": "MH-POL-102",
+      "expiresAt": "2026-09-14T05:10:44.951Z"
+    }
+  },
+  {
+    "eventId": "EVT-1789189845326-94C2D4",
+    "caseId": "CASE-OWNER-1789189844692",
+    "entityId": "CASE-OWNER-1789189844692",
+    "entityType": "CASE",
+    "action": "CASE_REASSIGNED",
+    "actorId": "MH-ADM-001",
+    "actorName": "Commissioner of Police (Admin)",
+    "timestamp": "2026-09-12T05:10:45.326Z",
+    "dataHash": "ff96e3ea04d5a4b32d585e2d114921c5d70be70dd441d1ae0d7d1c359baa8433",
+    "previousHash": "524a9e597b9d115302e10b45b93b90174d737339dd3858a6a596e9f63606aa16",
+    "eventHash": "6140ba93f03d8966893f8357cba3f7b1a6ae90bb0ced51e70b176437b98221f7",
+    "blockchainTxId": "tx-fabric-chain-YUC6k_A9iWaJP4NXy6P3saaukLsM7VHn",
+    "blockchainStatus": "COMMITTED",
+    "metadata": {
+      "caseId": "CASE-OWNER-1789189844692",
+      "previousIOBadge": "MH-POL-101",
+      "newIOBadge": "MH-POL-301",
+      "reason": "SIT Escalation"
+    }
   }
 ]

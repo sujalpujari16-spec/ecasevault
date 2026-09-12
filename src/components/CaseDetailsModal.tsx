@@ -1113,10 +1113,33 @@ export const CaseDetailsModal: React.FC<CaseDetailsModalProps> = ({
     e.preventDefault();
     if (isReadOnly) return;
 
-    const targetEv = caseItem.evidenceItems.find(e => e.id === fslEvidenceId) || caseItem.evidenceItems[0];
+    let targetEv = caseItem.evidenceItems?.find(e => e.id === fslEvidenceId) || caseItem.evidenceItems?.[0];
+    let updatedEvList = [...(caseItem.evidenceItems || [])];
     if (!targetEv) {
-      alert('Forensic requests must be anchored to an existing seized evidence item. Please seize and seal material evidence in the Evidence Vault first.');
-      return;
+      targetEv = {
+        id: `EVD-${caseItem.id.slice(-5)}-DOC-${Date.now().toString(36).toUpperCase()}`,
+        evidenceTag: `MH-EVD-GEN-${Date.now().toString().slice(-4)}`,
+        category: 'Digital Evidence & Documentation' as any,
+        description: `Case dossier material & electronic evidence forward for FSL analysis: ${fslRequestedExam}`,
+        collectionDate: new Date().toISOString().substring(0, 10),
+        collectionLocation: caseItem.incidentLocation || 'Investigation Premises',
+        collectingOfficer: session.officerName,
+        collectingOfficerBadge: session.badgeNo,
+        chainOfCustody: [
+          {
+            id: `COC-${Date.now()}`,
+            timestamp: new Date().toISOString().replace('T', ' ').substring(0, 16) + ' IST',
+            action: 'FORWARDED_TO_FSL',
+            fromCustodian: `${session.officerName} (${session.badgeNo})`,
+            toCustodian: fslLabName,
+            purpose: `Forensic Examination: ${fslRequestedExam}`,
+            verificationHash: generateSimulatedSHA256(caseItem.id + Date.now())
+          }
+        ],
+        sha256Hash: generateSimulatedSHA256(caseItem.id + Date.now()),
+        status: 'Under Examination'
+      };
+      updatedEvList.unshift(targetEv);
     }
 
     soundEffects.playStamp();
@@ -1186,8 +1209,8 @@ export const CaseDetailsModal: React.FC<CaseDetailsModalProps> = ({
     };
 
     // Update target evidence status to Under Examination
-    const updatedEvs = (caseItem.evidenceItems || []).map(ev => {
-      if (ev.id === targetEv.id) {
+    const updatedEvs = updatedEvList.map(ev => {
+      if (ev.id === targetEv!.id) {
         return {
           ...ev,
           status: 'Under Examination' as const,

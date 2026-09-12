@@ -81,6 +81,6 @@ export function broadcastEvent(eventName: string, data: any): void {
 /**
  * Helper to emit case mutation events
  */
-export function emitCaseEvent(eventType: 'CASE_CREATED' | 'CASE_UPDATED' | 'IO_REASSIGNED' | 'DOCUMENT_UPLOADED' | 'EVIDENCE_ADDED', data: any): void {
+export function emitCaseEvent(eventType: 'CASE_CREATED' | 'CASE_UPDATED' | 'IO_REASSIGNED' | 'DOCUMENT_UPLOADED' | 'EVIDENCE_ADDED' | 'OFFICER_CREATED' | string, data: any): void {
   broadcastEvent('case_update', { eventType, ...data });
 }

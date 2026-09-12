@@ -62,6 +62,10 @@ export interface PersistentCaseRecord {
   assigned_io_badge: string;
   supervising_dysp: string;
   investigating_officer_id?: string;
+  lead_investigator_badge?: string;
+  lead_investigator_name?: string;
+  caseAssignments?: any[];
+  accessRequests?: any[];
   assigned_at?: string;
   assigned_by?: string;
   blockchain_tx_id?: string;

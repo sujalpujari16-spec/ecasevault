@@ -1,5 +1,37 @@
 [
   {
+    "case_id": "CASE-OWNER-1789189844692",
+    "requester_badge": "MH-POL-102",
+    "requester_name": "Officer B (Worli Colleague)",
+    "requester_role": "POLICE",
+    "requester_station_id": "STA-WORLI",
+    "reason": "Assisting in cyber forensics recovery of stolen encrypted drives",
+    "requested_permission": "CONFIDENTIAL",
+    "requested_duration_hours": 48,
+    "id": "REQ-MTXXFRUY-3BA99D",
+    "status": "APPROVED",
+    "created_at": "2026-09-12T05:10:44.938Z",
+    "reviewed_by": "MH-ADM-001",
+    "reviewed_at": "2026-09-12T05:10:44.951Z",
+    "expires_at": "2026-09-14T05:10:44.951Z"
+  },
+  {
+    "case_id": "CASE-OWNER-1789189799995",
+    "requester_badge": "MH-POL-102",
+    "requester_name": "Officer B (Worli Colleague)",
+    "requester_role": "POLICE",
+    "requester_station_id": "STA-WORLI",
+    "reason": "Assisting in cyber forensics recovery of stolen encrypted drives",
+    "requested_permission": "CONFIDENTIAL",
+    "requested_duration_hours": 48,
+    "id": "REQ-MTXXETBO-17168D",
+    "status": "APPROVED",
+    "created_at": "2026-09-12T05:10:00.180Z",
+    "reviewed_by": "MH-ADM-001",
+    "reviewed_at": "2026-09-12T05:10:00.196Z",
+    "expires_at": "2026-09-14T05:10:00.196Z"
+  },
+  {
     "case_id": "CASE-OWNER-1789187938310",
     "requester_badge": "MH-POL-102",
     "requester_name": "Officer B (Worli Colleague)",

@@ -7,6 +7,7 @@ import { pool } from '../config/database';
 import { authenticateJwt } from '../middleware/auth';
 import { authorizeRole } from '../middleware/rbac';
 import { auditService } from '../services/auditService';
+import { emitCaseEvent } from './events';
 
 export const officersRouter = Router();
 
@@ -270,6 +271,68 @@ officersRouter.get('/:id', authenticateJwt, async (req: Request, res: Response):
   }
 });
 
+
+async function resolveStationId(input: string | undefined, role: string = 'POLICE'): Promise<string> {
+  const normRole = (role || 'POLICE').toUpperCase();
+  const raw = (input || '').trim();
+
+  // 1. Default role postings if empty
+  if (!raw) {
+    if (normRole === 'FORENSIC') return 'KALINA-FSL';
+    if (normRole === 'LEGAL') return 'COURT-SESSIONS';
+    if (normRole === 'AUDITOR') return 'VIGILANCE-CELL';
+    if (normRole === 'JAIL') return 'ARTHUR-ROAD-JAIL';
+    return 'ANDHERI-PS';
+  }
+
+  const upper = raw.toUpperCase();
+  if (upper.includes('KALINA') || upper.includes('FORENSIC') || upper.includes('FSL')) return 'KALINA-FSL';
+  if (upper.includes('COURT') || upper.includes('LEGAL') || upper.includes('SESSIONS') || upper.includes('PROSECUT')) return 'COURT-SESSIONS';
+  if (upper.includes('ANDHERI')) return 'ANDHERI-PS';
+  if (upper.includes('DADAR')) return 'DADAR-PS';
+  if (upper.includes('WORLI')) return 'WORLI-PS';
+  if (upper.includes('BANDRA')) return 'BANDRA-PS';
+  if (upper.includes('COLABA')) return 'COLABA-PS';
+  if (upper.includes('BORIVALI')) return 'BORIVALI-STF';
+  if (upper.includes('KOREGAON') || upper.includes('PUNE')) return 'KP-PS';
+  if (upper.includes('JAIL') || upper.includes('PRISON')) return 'ARTHUR-ROAD-JAIL';
+  if (upper.includes('VIGILANCE') || upper.includes('AUDIT')) return 'VIGILANCE-CELL';
+  if (upper.includes('HQ') || upper.includes('HEADQUARTERS')) return 'HQ-MUMBAI';
+
+  // 2. Direct match or fuzzy match against police_stations table
+  try {
+    const directMatch = await pool.query(
+      'SELECT station_id FROM police_stations WHERE station_id = $1 OR UPPER(name) = $2 LIMIT 1',
+      [raw, upper]
+    );
+    if (directMatch.rows.length > 0) {
+      return directMatch.rows[0].station_id;
+    }
+
+    const fuzzyMatch = await pool.query(
+      'SELECT station_id FROM police_stations WHERE name ILIKE $1 LIMIT 1',
+      [`%${raw}%`]
+    );
+    if (fuzzyMatch.rows.length > 0) {
+      return fuzzyMatch.rows[0].station_id;
+    }
+
+    // 3. Insert new station to guarantee foreign key constraint users(station_id) REFERENCES police_stations(station_id) never fails
+    const newId = raw.replace(/[^a-zA-Z0-9]/g, '-').toUpperCase().slice(0, 30) || `STN-${Date.now().toString(36).toUpperCase()}`;
+    await pool.query(
+      `INSERT INTO police_stations (station_id, name, zone, district, address, contact_number)
+       VALUES ($1, $2, 'General Jurisdiction', 'Maharashtra', $2, '+91 22 2600 0000')
+       ON CONFLICT (station_id) DO NOTHING`,
+      [newId, raw]
+    );
+    return newId;
+  } catch {
+    if (normRole === 'FORENSIC') return 'KALINA-FSL';
+    if (normRole === 'LEGAL') return 'COURT-SESSIONS';
+    return 'ANDHERI-PS';
+  }
+}
+
 // POST /api/officers — Provision personnel accounts (ADMIN only)
 officersRouter.post('/', authenticateJwt, authorizeRole('ADMIN'), async (req: Request, res: Response): Promise<void> => {
   const user = req.user!;
@@ -300,7 +363,7 @@ officersRouter.post('/', authenticateJwt, authorizeRole('ADMIN'), async (req: Re
   try {
     const id = `USR-${crypto.randomUUID().substring(0, 8).toUpperCase()}`;
     const passwordHash = await bcrypt.hash(effectivePassword, 10);
-    let assignedStation = stationId || user.station_id || user.station || 'ANDHERI-PS';
+    let assignedStation = await resolveStationId(stationId || user.station_id || user.station, role);
 
     const normalizedUsername = username.trim().toLowerCase();
     const dynamicUserRecord = {
@@ -360,6 +423,18 @@ officersRouter.post('/', authenticateJwt, authorizeRole('ADMIN'), async (req: Re
         ipAddress: req.ip,
         notes: `Provisioned personnel ${fullName} (${rank}, ${badgeNo}) as ${role} by ${user.role} ${user.badgeNo}`,
       });
+
+      try {
+        emitCaseEvent('OFFICER_CREATED', {
+          id,
+          badgeNo,
+          username: normalizedUsername,
+          name: fullName,
+          rank,
+          role: role.toUpperCase(),
+          stationId: assignedStation,
+        });
+      } catch {}
 
       res.status(201).json({ success: true, officer: insertResult.rows[0], initialPassword: effectivePassword });
       return;
