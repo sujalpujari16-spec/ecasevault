@@ -1,0 +1,817 @@
+[
+  {
+    "id": "ASGN-MHMUM2026A60DF025-01",
+    "case_id": "MH-MUM-2026-A60DF025",
+    "officer_id": "MH-POL-8842",
+    "officer_name": "MH-POL-8842",
+    "assigned_by": "DySP Crime Branch",
+    "assigned_at": "2026-09-05T23:13:43.583Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM2026570B96C0-01",
+    "case_id": "MH-MUM-2026-570B96C0",
+    "officer_id": "MH-POL-8842",
+    "officer_name": "police@demo",
+    "assigned_by": "DySP Crime Branch",
+    "assigned_at": "2026-09-05T17:22:46.473Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM2026EC31EBCF-01",
+    "case_id": "MH-MUM-2026-EC31EBCF",
+    "officer_id": "EX",
+    "officer_name": "WDWX",
+    "assigned_by": "DySP Crime Branch",
+    "assigned_at": "2026-09-05T16:15:45.286Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM2026557178D3-01",
+    "case_id": "MH-MUM-2026-557178D3",
+    "officer_id": "MH-POL-8842",
+    "officer_name": "police.officer",
+    "assigned_by": "DySP Crime Branch",
+    "assigned_at": "2026-09-05T15:20:48.093Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM20260CF89530-01",
+    "case_id": "MH-MUM-2026-0CF89530",
+    "officer_id": "MH-POL-8842",
+    "officer_name": "police@demo",
+    "assigned_by": "DySP Crime Branch",
+    "assigned_at": "2026-09-05T15:14:19.409Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM20269B12080E-01",
+    "case_id": "MH-MUM-2026-9B12080E",
+    "officer_id": "MH-POL-8842",
+    "officer_name": "police@demo",
+    "assigned_by": "DySP Crime Branch",
+    "assigned_at": "2026-09-05T15:13:08.323Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM20266D663EC7-01",
+    "case_id": "MH-MUM-2026-6D663EC7",
+    "officer_id": "MH-POL-8842",
+    "officer_name": "police@demo",
+    "assigned_by": "DySP Crime Branch",
+    "assigned_at": "2026-09-05T15:12:59.626Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM202614B6B40C-01",
+    "case_id": "MH-MUM-2026-14B6B40C",
+    "officer_id": "MH-POL-8842",
+    "officer_name": "police@demo",
+    "assigned_by": "DySP Crime Branch",
+    "assigned_at": "2026-09-05T15:11:45.004Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE202600142-01",
+    "case_id": "CASE-2026-00142",
+    "officer_id": "MH-PSI-4910",
+    "officer_name": "PSI R. Deshmukh",
+    "assigned_by": "DySP Ananya Sharma, MPS",
+    "assigned_at": "2026-08-28T10:00:00.000Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE202600189-01",
+    "case_id": "CASE-2026-00189",
+    "officer_id": "MH-PSI-4910",
+    "officer_name": "PSI R. Deshmukh",
+    "assigned_by": "DySP Ananya Sharma, MPS",
+    "assigned_at": "2026-08-30T14:30:00.000Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T12:27:11.606Z",
+    "removed_by": "ADM-MH-001",
+    "removal_reason": "Administrative transfer of investigation under SP Crime directive (Reassigned to Officer Sujal [MH-POL-SUJ] by ADM-MH-001)"
+  },
+  {
+    "id": "ASGN-CASE202600205-01",
+    "case_id": "CASE-2026-00205",
+    "officer_id": "MH-PSI-4910",
+    "officer_name": "PSI R. Deshmukh",
+    "assigned_by": "DySP Ananya Sharma, MPS",
+    "assigned_at": "2026-09-01T09:15:00.000Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE202600098-01",
+    "case_id": "CASE-2026-00098",
+    "officer_id": "MH-PSI-4910",
+    "officer_name": "PSI R. Deshmukh",
+    "assigned_by": "DySP Ananya Sharma, MPS",
+    "assigned_at": "2026-08-15T11:00:00.000Z",
+    "status": "ACTIVE"
+  },
+  {
+    "case_id": "CASE-OWNER-1789117438295",
+    "officer_badge": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "role": "Lead Investigating Officer",
+    "access_level": "FULL",
+    "assigned_by": "MH-POL-101",
+    "assigned_by_name": "Officer A (Worli)"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789117474030-1",
+    "case_id": "CASE-OWNER-1789117474030",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-11T09:04:34.077Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T09:04:34.092Z",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789117474030-MTWQCM5O",
+    "case_id": "CASE-OWNER-1789117474030",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T09:04:34.092Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWQKLCH-MTWQKLEI",
+    "case_id": "CASE-2026-MTWQKLCH",
+    "officer_id": "1212",
+    "officer_name": "sujal.patil@ecasevault.com",
+    "assigned_by": "1212",
+    "assigned_at": "2026-09-11T09:10:46.289Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWQLDQ3-MTWQLDS3",
+    "case_id": "CASE-2026-MTWQLDQ3",
+    "officer_id": "1212",
+    "officer_name": "sujal.patil@ecasevault.com",
+    "assigned_by": "1212",
+    "assigned_at": "2026-09-11T09:11:23.067Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWQLXKV-MTWQLXN2",
+    "case_id": "CASE-2026-MTWQLXKV",
+    "officer_id": "1212",
+    "officer_name": "sujal.patil@ecasevault.com",
+    "assigned_by": "1212",
+    "assigned_at": "2026-09-11T09:11:48.799Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWQW1OT-MTWQW1QW",
+    "case_id": "CASE-2026-MTWQW1OT",
+    "officer_id": "adda",
+    "officer_name": "raj.patil@ecasevault.com",
+    "assigned_by": "adda",
+    "assigned_at": "2026-09-11T09:19:40.685Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789118635369-1",
+    "case_id": "CASE-OWNER-1789118635369",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-11T09:23:55.628Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T09:23:55.656Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789118635369-MTWR1IFC",
+    "case_id": "CASE-OWNER-1789118635369",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T09:23:55.656Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWRE31Q-MTWRE339",
+    "case_id": "CASE-2026-MTWRE31Q",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "io.dadar@police.gov",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T09:33:42.254Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789119262921-1",
+    "case_id": "CASE-OWNER-1789119262921",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-11T09:34:23.087Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T09:34:23.132Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789119262921-MTWREYL8",
+    "case_id": "CASE-OWNER-1789119262921",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T09:34:23.132Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-DADAR-1789119263387-LEAD",
+    "case_id": "CASE-DADAR-1789119263387",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T09:34:23.447Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T09:47:15.495Z",
+    "removed_by": "ADM-MH-001",
+    "removal_reason": "Investigation Performance / Quality Review (Administrative Replacement) (Reassigned to Inspector Sachin R. Kadam (IO) [MH-POL-DAD-401] by ADM-MH-001)"
+  },
+  {
+    "id": "ASGN-CASEDADAR1789119263387-MTWRVIJR",
+    "case_id": "CASE-DADAR-1789119263387",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "ADM-MH-001",
+    "assigned_at": "2026-09-11T09:47:15.495Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWRWHIV-MTWRWHLG",
+    "case_id": "CASE-2026-MTWRWHIV",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T09:48:00.823Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWRWXA0-MTWRWXC8",
+    "case_id": "CASE-2026-MTWRWXA0",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T09:48:21.240Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWRYE4R-MTWRYE77",
+    "case_id": "CASE-2026-MTWRYE4R",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T09:49:29.739Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789120635622-1",
+    "case_id": "CASE-OWNER-1789120635622",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-11T09:57:15.880Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T09:57:15.956Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789120635622-MTWS8DV8",
+    "case_id": "CASE-OWNER-1789120635622",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T09:57:15.956Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-DADAR-1789120636121-LEAD",
+    "case_id": "CASE-DADAR-1789120636121",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T09:57:16.177Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789120739931-1",
+    "case_id": "CASE-OWNER-1789120739931",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-11T09:59:00.032Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T09:59:00.220Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789120739931-MTWSAMBG",
+    "case_id": "CASE-OWNER-1789120739931",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T09:59:00.220Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-DADAR-1789120740392-LEAD",
+    "case_id": "CASE-DADAR-1789120740392",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T09:59:00.475Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWSK3X1-MTWSK3Z7",
+    "case_id": "CASE-2026-MTWSK3X1",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T10:06:22.933Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWSKRJ1-MTWSKRKJ",
+    "case_id": "CASE-2026-MTWSKRJ1",
+    "officer_id": "MH-POL-8842",
+    "officer_name": "Inspector Rajesh Patil (IO)",
+    "assigned_by": "MH-POL-8842",
+    "assigned_at": "2026-09-11T10:06:53.533Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE6EE3MHMUMGHATKOPAR11SEPT2026-MTWSKSIF",
+    "case_id": "CASE-6EE3-MH-MUM-GHATKOPAR-11SEPT2026",
+    "officer_id": "MH-POL-8842",
+    "officer_name": "Inspector Rajesh Patil (IO)",
+    "assigned_by": "MH-POL-8842",
+    "assigned_at": "2026-09-11T10:06:54.807Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWSLJDA-MTWSLJFF",
+    "case_id": "CASE-2026-MTWSLJDA",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T10:07:29.614Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789123614070-1",
+    "case_id": "CASE-OWNER-1789123614070",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-11T10:46:54.176Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T10:46:54.362Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789123614070-MTWU080Q",
+    "case_id": "CASE-OWNER-1789123614070",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T10:46:54.362Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-DADAR-1789123614530-LEAD",
+    "case_id": "CASE-DADAR-1789123614530",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T10:46:54.608Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWU2U97-MTWU2UBC",
+    "case_id": "CASE-2026-MTWU2U97",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T10:48:56.491Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWU7BJ5-MTWU7BLD",
+    "case_id": "CASE-2026-MTWU7BJ5",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T10:52:25.505Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWUG78C-MTWUG7A7",
+    "case_id": "CASE-2026-MTWUG78C",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T10:59:19.836Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWUJH1I-MTWUJH3Y",
+    "case_id": "CASE-2026-MTWUJH1I",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T11:01:52.518Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWX7MYW-MTWX7N0M",
+    "case_id": "CASE-2026-MTWX7MYW",
+    "officer_id": "MH-POL-SUJ",
+    "officer_name": "Officer Sujal",
+    "assigned_by": "MH-POL-SUJ",
+    "assigned_at": "2026-09-11T12:16:39.176Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWX7UBB-MTWX7UCE",
+    "case_id": "CASE-2026-MTWX7UBB",
+    "officer_id": "MH-PSI-4910",
+    "officer_name": "PSI R. Deshmukh",
+    "assigned_by": "MH-POL-SUJ",
+    "assigned_at": "2026-09-11T12:16:48.695Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE2026MTWXKLHP-MTWXKLJ9",
+    "case_id": "CASE-2026-MTWXKLHP",
+    "officer_id": "MH-POL-COL-301",
+    "officer_name": "Inspector Dilip M. Mane",
+    "assigned_by": "MH-POL-SUJ",
+    "assigned_at": "2026-09-11T12:26:43.789Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-REG-CASE2026MTWXKLHP-MTWXKLJ9",
+    "case_id": "CASE-2026-MTWXKLHP",
+    "officer_id": "MH-POL-SUJ",
+    "officer_name": "Officer Sujal",
+    "assigned_by": "MH-POL-SUJ",
+    "assigned_at": "2026-09-11T12:26:43.789Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE202600142-MTWXKZVJ",
+    "case_id": "CASE-2026-00142",
+    "officer_id": "MH-POL-SUJ",
+    "officer_name": "Officer Sujal",
+    "assigned_by": "ADM-MH-001",
+    "assigned_at": "2026-09-11T12:27:02.430Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE202600189-MTWXL6YE",
+    "case_id": "CASE-2026-00189",
+    "officer_id": "MH-POL-SUJ",
+    "officer_name": "Officer Sujal",
+    "assigned_by": "ADM-MH-001",
+    "assigned_at": "2026-09-11T12:27:11.606Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM2026MTWXPGYG-MTWXPH04",
+    "case_id": "MH-MUM-2026-MTWXPGYG",
+    "officer_id": "fytf",
+    "officer_name": "suuja",
+    "assigned_by": "fytf",
+    "assigned_at": "2026-09-11T12:30:31.198Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASEDADAR1789123614530-MTWXR9M1",
+    "case_id": "CASE-DADAR-1789123614530",
+    "officer_id": "fytf",
+    "officer_name": "suuja",
+    "assigned_by": "ADM-MH-001",
+    "assigned_at": "2026-09-11T12:31:54.983Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM2026MTWXUF7Z-MTWXUFA6",
+    "case_id": "MH-MUM-2026-MTWXUF7Z",
+    "officer_id": "MH-POL-9969",
+    "officer_name": "tANAYAAA",
+    "assigned_by": "MH-POL-9969",
+    "assigned_at": "2026-09-11T12:34:22.232Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASEDADAR1789123614530-MTWXXK44",
+    "case_id": "CASE-DADAR-1789123614530",
+    "officer_id": "MH-POL-9969",
+    "officer_name": "tANAYAAA",
+    "assigned_by": "ADM-MH-001",
+    "assigned_at": "2026-09-11T12:36:48.530Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM2026MTWY5GAC-MTWY5GCL",
+    "case_id": "MH-MUM-2026-MTWY5GAC",
+    "officer_id": "67t7",
+    "officer_name": "rutuja",
+    "assigned_by": "67t7",
+    "assigned_at": "2026-09-11T12:42:56.829Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789123614070-MTWY6Q9O",
+    "case_id": "CASE-OWNER-1789123614070",
+    "officer_id": "67t7",
+    "officer_name": "rutuja",
+    "assigned_by": "ADM-MH-001",
+    "assigned_at": "2026-09-11T12:43:56.409Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM2026MTWYLUPA-MTWYLURG",
+    "case_id": "MH-MUM-2026-MTWYLUPA",
+    "officer_id": "MH-POL-8938",
+    "officer_name": "Sujal Pujari",
+    "assigned_by": "MH-POL-8938",
+    "assigned_at": "2026-09-11T12:55:42.006Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789134309242-1",
+    "case_id": "CASE-OWNER-1789134309242",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-11T13:45:09.363Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T13:45:09.462Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789134309242-MTX0DGDT",
+    "case_id": "CASE-OWNER-1789134309242",
+    "officer_id": "MH-POL-102",
+    "officer_name": "Officer B (Worli Colleague)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T13:45:09.423Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T13:45:09.462Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789134309242-MTX0DGEU",
+    "case_id": "CASE-OWNER-1789134309242",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T13:45:09.462Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-DADAR-1789134309623-LEAD",
+    "case_id": "CASE-DADAR-1789134309623",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T13:45:09.704Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-MHMUM2026MTX0RBUR-MTX0RBX9",
+    "case_id": "MH-MUM-2026-MTX0RBUR",
+    "officer_id": "ewewr",
+    "officer_name": "eee",
+    "assigned_by": "ewewr",
+    "assigned_at": "2026-09-11T13:55:56.751Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789136377944-1",
+    "case_id": "CASE-OWNER-1789136377944",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-11T14:19:38.072Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T14:19:38.171Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789136377944-MTX1LSLB",
+    "case_id": "CASE-OWNER-1789136377944",
+    "officer_id": "MH-POL-102",
+    "officer_name": "Officer B (Worli Colleague)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T14:19:38.110Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T14:19:38.171Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789136377944-MTX1LSMZ",
+    "case_id": "CASE-OWNER-1789136377944",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T14:19:38.171Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-DADAR-1789136378459-LEAD",
+    "case_id": "CASE-DADAR-1789136378459",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T14:19:38.541Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789136825629-1",
+    "case_id": "CASE-OWNER-1789136825629",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-11T14:27:05.870Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T14:27:05.978Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789136825629-MTX1VE47",
+    "case_id": "CASE-OWNER-1789136825629",
+    "officer_id": "MH-POL-102",
+    "officer_name": "Officer B (Worli Colleague)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T14:27:05.909Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-11T14:27:05.978Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789136825629-MTX1VE62",
+    "case_id": "CASE-OWNER-1789136825629",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-11T14:27:05.978Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-DADAR-1789136826214-LEAD",
+    "case_id": "CASE-DADAR-1789136826214",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-11T14:27:06.344Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789178666431-1",
+    "case_id": "CASE-OWNER-1789178666431",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-12T02:04:26.672Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-12T02:04:26.747Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789178666431-MTXQS6PI",
+    "case_id": "CASE-OWNER-1789178666431",
+    "officer_id": "MH-POL-102",
+    "officer_name": "Officer B (Worli Colleague)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-12T02:04:26.742Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-12T02:04:26.747Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789178666431-MTXQS6PN",
+    "case_id": "CASE-OWNER-1789178666431",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-12T02:04:26.747Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-DADAR-1789178667049-LEAD",
+    "case_id": "CASE-DADAR-1789178667049",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-12T02:04:27.138Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789178757147-1",
+    "case_id": "CASE-OWNER-1789178757147",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-12T02:05:57.449Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-12T02:05:57.509Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789178757147-MTXQU4QK",
+    "case_id": "CASE-OWNER-1789178757147",
+    "officer_id": "MH-POL-102",
+    "officer_name": "Officer B (Worli Colleague)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-12T02:05:57.498Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-12T02:05:57.509Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789178757147-MTXQU4QT",
+    "case_id": "CASE-OWNER-1789178757147",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-12T02:05:57.509Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-DADAR-1789178757787-LEAD",
+    "case_id": "CASE-DADAR-1789178757787",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-12T02:05:57.901Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-OWNER-1789179511135-1",
+    "case_id": "CASE-OWNER-1789179511135",
+    "officer_id": "MH-POL-101",
+    "officer_name": "Officer A (Worli)",
+    "assigned_by": "MH-POL-101",
+    "assigned_at": "2026-09-12T02:18:31.400Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-12T02:18:31.486Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789179511135-MTXRAAI3",
+    "case_id": "CASE-OWNER-1789179511135",
+    "officer_id": "MH-POL-102",
+    "officer_name": "Officer B (Worli Colleague)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-12T02:18:31.465Z",
+    "status": "REMOVED",
+    "removed_at": "2026-09-12T02:18:31.486Z",
+    "removed_by": "MH-ADM-001",
+    "removal_reason": "Administrative transfer: case escalated to Special Investigation Team (SIT) (Reassigned to Inspector D (New Lead IO) [MH-POL-301] by MH-ADM-001)"
+  },
+  {
+    "id": "ASGN-CASEOWNER1789179511135-MTXRAAIM",
+    "case_id": "CASE-OWNER-1789179511135",
+    "officer_id": "MH-POL-301",
+    "officer_name": "Inspector D (New Lead IO)",
+    "assigned_by": "MH-ADM-001",
+    "assigned_at": "2026-09-12T02:18:31.486Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "ASGN-CASE-DADAR-1789179511715-LEAD",
+    "case_id": "CASE-DADAR-1789179511715",
+    "officer_id": "MH-POL-DAD-401",
+    "officer_name": "Inspector Sachin R. Kadam (IO)",
+    "assigned_by": "MH-POL-DAD-401",
+    "assigned_at": "2026-09-12T02:18:31.845Z",
+    "status": "ACTIVE"
+  }
+]

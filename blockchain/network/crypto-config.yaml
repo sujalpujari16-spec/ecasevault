@@ -1,0 +1,36 @@
+# ============================================================================
+# e-CASEVAULT — Hyperledger Fabric 2.5 Crypto Configuration
+# Organizations: PoliceOrgMSP, FSLOrgMSP, CyberCellOrgMSP, OrdererMSP
+# ============================================================================
+
+OrdererOrgs:
+  - Name: Orderer
+    Domain: casevault.police.gov.in
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: orderer
+
+PeerOrgs:
+  - Name: PoliceOrg
+    Domain: police.casevault.police.gov.in
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+    Users:
+      Count: 2
+
+  - Name: FSLOrg
+    Domain: fsl.casevault.police.gov.in
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+    Users:
+      Count: 2
+
+  - Name: CyberCellOrg
+    Domain: cyber.casevault.police.gov.in
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+    Users:
+      Count: 2

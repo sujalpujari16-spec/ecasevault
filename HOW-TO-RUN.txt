@@ -1,0 +1,42 @@
+================================================================================
+e-CASEVAULT — Maharashtra Police Digital Evidence Management System
+================================================================================
+
+HOW TO RUN THIS PROJECT ON YOUR LAPTOP:
+
+PREREQUISITE:
+- Node.js must be installed (Version 18, 20, 22, or newer).
+  If you don't have it, download and install the LTS version from:
+  https://nodejs.org/ (takes 1 minute).
+
+--------------------------------------------------------------------------------
+OPTION 1: THE EASIEST WAY (1-CLICK LAUNCHER)
+--------------------------------------------------------------------------------
+- ON WINDOWS:
+  Simply double-click "START-WINDOWS.bat".
+  It will automatically install packages, start the app, and open your browser!
+
+- ON MAC / LINUX:
+  Double-click "START-MAC.command" (or open Terminal and run ./START-MAC.command).
+
+--------------------------------------------------------------------------------
+OPTION 2: USING TERMINAL / COMMAND PROMPT
+--------------------------------------------------------------------------------
+1. Open Terminal or Command Prompt in this folder.
+2. Run:
+      npm install
+3. Run:
+      npm start
+
+4. Open your browser and go to:
+      http://localhost:3000
+
+The backend API runs at http://localhost:5001. Both are started automatically!
+
+--------------------------------------------------------------------------------
+OPTION 3: IN ANTIGRAVITY / VS CODE
+--------------------------------------------------------------------------------
+1. Open this folder in Antigravity or VS Code.
+2. Press F5 (or go to Run & Debug tab and click "Play" -> "Run Full Stack").
+3. Done!
+================================================================================

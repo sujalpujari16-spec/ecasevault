@@ -1,0 +1,271 @@
+[
+  {
+    "id": "GRANT-MTXRAAI2-54DE23",
+    "case_id": "CASE-OWNER-1789179511135",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-12T02:18:31.465Z",
+    "expires_at": "2026-09-14T02:18:31.465Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-12T02:18:31.487Z"
+  },
+  {
+    "id": "GRANT-MTXQU4QJ-07CC56",
+    "case_id": "CASE-OWNER-1789178757147",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-12T02:05:57.498Z",
+    "expires_at": "2026-09-14T02:05:57.498Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-12T02:05:57.509Z"
+  },
+  {
+    "id": "GRANT-MTXQS6PI-D9B1D1",
+    "case_id": "CASE-OWNER-1789178666431",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-12T02:04:26.742Z",
+    "expires_at": "2026-09-14T02:04:26.742Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-12T02:04:26.748Z"
+  },
+  {
+    "id": "GRANT-MTX1VE46-6A5F54",
+    "case_id": "CASE-OWNER-1789136825629",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T14:27:05.909Z",
+    "expires_at": "2026-09-13T14:27:05.909Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T14:27:05.979Z"
+  },
+  {
+    "id": "GRANT-MTX1LSLB-EF35A6",
+    "case_id": "CASE-OWNER-1789136377944",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T14:19:38.110Z",
+    "expires_at": "2026-09-13T14:19:38.110Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T14:19:38.172Z"
+  },
+  {
+    "id": "GRANT-MTX0MAXW-33136C",
+    "case_id": "CASE-OWNER-1789134722094",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T13:52:02.275Z",
+    "expires_at": "2026-09-13T13:52:02.275Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T13:52:02.312Z"
+  },
+  {
+    "id": "GRANT-MTX0DGDS-3C0F8B",
+    "case_id": "CASE-OWNER-1789134309242",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T13:45:09.423Z",
+    "expires_at": "2026-09-13T13:45:09.423Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T13:45:09.463Z"
+  },
+  {
+    "id": "GRANT-MTWY6Q9N-F1C1D1",
+    "case_id": "CASE-OWNER-1789123614070",
+    "user_badge": "67t7",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "ADM-MH-001",
+    "granted_at": "2026-09-11T12:43:56.409Z",
+    "expires_at": "2026-09-12T12:43:56.409Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "GRANT-MTWXXK43-0E16CE",
+    "case_id": "CASE-DADAR-1789123614530",
+    "user_badge": "MH-POL-9969",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "ADM-MH-001",
+    "granted_at": "2026-09-11T12:36:48.530Z",
+    "expires_at": "2026-09-12T12:36:48.530Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "GRANT-MTWXR9M0-CD0F52",
+    "case_id": "CASE-DADAR-1789123614530",
+    "user_badge": "fytf",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "ADM-MH-001",
+    "granted_at": "2026-09-11T12:31:54.983Z",
+    "expires_at": "2026-09-12T12:31:54.983Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "GRANT-MTWXKZVJ-CD027B",
+    "case_id": "CASE-2026-00142",
+    "user_badge": "MH-POL-SUJ",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "ADM-MH-001",
+    "granted_at": "2026-09-11T12:27:02.430Z",
+    "expires_at": "2026-09-13T12:27:02.430Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "GRANT-MTWU080K-0B21CE",
+    "case_id": "CASE-OWNER-1789123614070",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T10:46:54.355Z",
+    "expires_at": "2026-09-13T10:46:54.355Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T10:46:54.363Z"
+  },
+  {
+    "id": "GRANT-MTWSF0DW-71E023",
+    "case_id": "CASE-OWNER-1789120944776",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T10:02:25.075Z",
+    "expires_at": "2026-09-13T10:02:25.075Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T10:02:25.084Z"
+  },
+  {
+    "id": "GRANT-MTWSAMB9-96C737",
+    "case_id": "CASE-OWNER-1789120739931",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:59:00.213Z",
+    "expires_at": "2026-09-13T09:59:00.213Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T09:59:00.221Z"
+  },
+  {
+    "id": "GRANT-MTWS8DU1-21505D",
+    "case_id": "CASE-OWNER-1789120635622",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:57:15.912Z",
+    "expires_at": "2026-09-13T09:57:15.912Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T09:57:15.957Z"
+  },
+  {
+    "id": "GRANT-MTWRSS7M-450D9E",
+    "case_id": "CASE-OWNER-1789119907730",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:45:08.049Z",
+    "expires_at": "2026-09-13T09:45:08.049Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T09:45:08.060Z"
+  },
+  {
+    "id": "GRANT-MTWREYKU-CA5886",
+    "case_id": "CASE-OWNER-1789119262921",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:34:23.117Z",
+    "expires_at": "2026-09-13T09:34:23.117Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T09:34:23.133Z"
+  },
+  {
+    "id": "GRANT-MTWRDEJG-3D2EF0",
+    "case_id": "CASE-OWNER-1789119190126",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:33:10.492Z",
+    "expires_at": "2026-09-13T09:33:10.492Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T09:33:10.499Z"
+  },
+  {
+    "id": "GRANT-MTWR1IF6-1CD837",
+    "case_id": "CASE-OWNER-1789118635369",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:23:55.650Z",
+    "expires_at": "2026-09-13T09:23:55.650Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T09:23:55.657Z"
+  },
+  {
+    "id": "GRANT-MTWQDX6L-72294C",
+    "case_id": "CASE-OWNER-1789117534910",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:05:35.036Z",
+    "expires_at": "2026-09-13T09:05:35.036Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T09:05:35.047Z"
+  },
+  {
+    "id": "GRANT-MTWQD6N6-CE4C30",
+    "case_id": "CASE-OWNER-1789117500440",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:05:00.641Z",
+    "expires_at": "2026-09-13T09:05:00.641Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T09:05:00.698Z"
+  },
+  {
+    "id": "GRANT-MTWQD25M-4A5908",
+    "case_id": "CASE-OWNER-1789117494768",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:04:54.826Z",
+    "expires_at": "2026-09-13T09:04:54.826Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T09:04:54.829Z"
+  },
+  {
+    "id": "GRANT-MTWQCM5L-EEE4EE",
+    "case_id": "CASE-OWNER-1789117474030",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:04:34.089Z",
+    "expires_at": "2026-09-13T09:04:34.089Z",
+    "status": "REVOKED",
+    "revoked_at": "2026-09-11T09:04:34.093Z"
+  },
+  {
+    "id": "GRANT-MTWQBUL3-1120BB",
+    "case_id": "CASE-OWNER-1789117438295",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:03:58.359Z",
+    "expires_at": "2026-09-13T09:03:58.359Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "GRANT-MTWQAQ1U-2DDCA2",
+    "case_id": "CASE-OWNER-1789117385813",
+    "user_badge": "MH-POL-102",
+    "permission": "CONFIDENTIAL",
+    "granted_by": "MH-ADM-001",
+    "granted_at": "2026-09-11T09:03:05.826Z",
+    "expires_at": "2026-09-13T09:03:05.826Z",
+    "status": "ACTIVE"
+  }
+]

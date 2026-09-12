@@ -1,0 +1,42 @@
+{
+  "name": "casevault-network",
+  "version": "1.0.0",
+  "client": {
+    "organization": "PoliceOrg",
+    "connection": {
+      "timeout": {
+        "peer": {
+          "endorser": "300"
+        }
+      }
+    }
+  },
+  "organizations": {
+    "PoliceOrg": {
+      "mspid": "PoliceOrgMSP",
+      "peers": ["peer0.police.casevault.police.gov.in"],
+      "certificateAuthorities": ["ca.police.casevault.police.gov.in"]
+    },
+    "FSLOrg": {
+      "mspid": "FSLOrgMSP",
+      "peers": ["peer0.fsl.casevault.police.gov.in"],
+      "certificateAuthorities": ["ca.fsl.casevault.police.gov.in"]
+    },
+    "CyberCellOrg": {
+      "mspid": "CyberCellOrgMSP",
+      "peers": ["peer0.cyber.casevault.police.gov.in"],
+      "certificateAuthorities": ["ca.cyber.casevault.police.gov.in"]
+    }
+  },
+  "peers": {
+    "peer0.police.casevault.police.gov.in": {
+      "url": "grpcs://localhost:7051"
+    },
+    "peer0.fsl.casevault.police.gov.in": {
+      "url": "grpcs://localhost:9051"
+    },
+    "peer0.cyber.casevault.police.gov.in": {
+      "url": "grpcs://localhost:11051"
+    }
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "classifications": [
+    {
+      "act": "BNS",
+      "section": "101",
+      "title": "Murder",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Death or imprisonment for life and fine (as prescribed under Section 103)"
+    },
+    {
+      "act": "BNS",
+      "section": "103",
+      "title": "Punishment for murder",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Death or imprisonment for life, and shall also be liable to fine"
+    },
+    {
+      "act": "BNS",
+      "section": "100",
+      "title": "Culpable homicide",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Punishable under Section 105"
+    },
+    {
+      "act": "BNS",
+      "section": "105",
+      "title": "Punishment for culpable homicide not amounting to murder",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment for life, or imprisonment up to 10 years, and fine"
+    },
+    {
+      "act": "BNS",
+      "section": "106",
+      "title": "Causing death by negligence",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Magistrate of the first class",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "BNS 106(1): Imprisonment up to 5 years and fine. BNS 106(2) [Hit & Run]: Imprisonment up to 10 years and fine."
+    },
+    {
+      "act": "BNS",
+      "section": "109",
+      "title": "Attempt to murder",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 10 years and fine; if hurt caused, life imprisonment or up to 10 years"
+    },
+    {
+      "act": "BNS",
+      "section": "115",
+      "title": "Voluntarily causing hurt",
+      "cognizable": false,
+      "bailable": true,
+      "compoundable": true,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 1 year, or fine up to ₹10,000, or both"
+    },
+    {
+      "act": "BNS",
+      "section": "117",
+      "title": "Voluntarily causing grievous hurt",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 7 years and fine"
+    },
+    {
+      "act": "BNS",
+      "section": "125",
+      "title": "Act endangering life or personal safety of others",
+      "cognizable": false,
+      "bailable": true,
+      "compoundable": true,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 3 months, or fine up to ₹2,500, or both; if hurt caused up to 6 months"
+    },
+    {
+      "act": "BNS",
+      "section": "281",
+      "title": "Rash driving or riding on a public way",
+      "cognizable": true,
+      "bailable": true,
+      "compoundable": false,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 6 months, or fine up to ₹1,000, or both"
+    },
+    {
+      "act": "BNS",
+      "section": "303",
+      "title": "Theft",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 3 years, or fine, or both. Community service for petty theft under ₹5,000"
+    },
+    {
+      "act": "BNS",
+      "section": "305",
+      "title": "Theft in dwelling house, or means of transport or place of worship, etc.",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 7 years and fine"
+    },
+    {
+      "act": "BNS",
+      "section": "308",
+      "title": "Extortion",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 7 years, or fine, or both"
+    },
+    {
+      "act": "BNS",
+      "section": "309",
+      "title": "Robbery",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Rigorous imprisonment up to 10 years and fine; on highway between sunset and sunrise up to 14 years"
+    },
+    {
+      "act": "BNS",
+      "section": "310",
+      "title": "Dacoity",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment for life, or rigorous imprisonment up to 10 years, and fine"
+    },
+    {
+      "act": "BNS",
+      "section": "316",
+      "title": "Criminal breach of trust",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Magistrate of the first class",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 5 years, or fine, or both"
+    },
+    {
+      "act": "BNS",
+      "section": "318",
+      "title": "Cheating",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "BNS 318(2): Up to 3 years. BNS 318(4) [mirror of IPC 420]: Imprisonment up to 7 years and fine"
+    },
+    {
+      "act": "BNS",
+      "section": "351",
+      "title": "Criminal intimidation",
+      "cognizable": false,
+      "bailable": true,
+      "compoundable": true,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 2 years, or fine, or both; if threat to cause death, up to 7 years"
+    },
+    {
+      "act": "BNS",
+      "section": "64",
+      "title": "Punishment for rape",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Rigorous imprisonment not less than 10 years extending to life, and fine"
+    },
+    {
+      "act": "BNS",
+      "section": "65",
+      "title": "Punishment for rape in certain cases (Rape of child)",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Rigorous imprisonment not less than 20 years extending to life, or death"
+    },
+    {
+      "act": "BNS",
+      "section": "70",
+      "title": "Gang rape",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Rigorous imprisonment not less than 20 years extending to life; death for minor girl"
+    },
+    {
+      "act": "BNS",
+      "section": "74",
+      "title": "Assault or criminal force to woman with intent to outrage her modesty",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment not less than 1 year extending to 5 years, and fine"
+    },
+    {
+      "act": "BNS",
+      "section": "78",
+      "title": "Stalking",
+      "cognizable": true,
+      "bailable": true,
+      "compoundable": false,
+      "triable_by": "Any Magistrate",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "1st Conviction: Up to 3 years and fine (Bailable). Subsequent: Up to 5 years and fine (Non-Bailable)"
+    },
+    {
+      "act": "BNS",
+      "section": "80",
+      "title": "Dowry death",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Court of Session",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment not less than 7 years extending to life imprisonment"
+    },
+    {
+      "act": "BNS",
+      "section": "85",
+      "title": "Husband or relative of husband of a woman subjecting her to cruelty",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Magistrate of the first class",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 3 years and fine"
+    },
+    {
+      "act": "BNS",
+      "section": "137",
+      "title": "Kidnapping",
+      "cognizable": true,
+      "bailable": false,
+      "compoundable": false,
+      "triable_by": "Magistrate of the first class",
+      "classification_source": "BNSS 2023 First Schedule (Classification of Offences)",
+      "punishment": "Imprisonment up to 7 years and fine"
+    },
+    {
+      "act": "MV_ACT",
+      "section": "185",
+      "title": "Driving by a drunken person or by a person under the influence of drugs",
+      "cognizable": true,
+      "bailable": true,
+      "compoundable": false,
+      "triable_by": "Any Magistrate",
+      "classification_source": "Motor Vehicles Act, 1988 (Section 202 Police Arrest Power)",
+      "punishment": "1st Offence: Up to 6 months imprisonment or fine up to ₹10,000, or both. Repeat Offence: Up to 2 years or fine up to ₹15,000, or both"
+    }
+  ]
+}

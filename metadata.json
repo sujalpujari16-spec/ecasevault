@@ -1,0 +1,6 @@
+{
+  "name": "Maharashtra Police - e-CASEVAULT",
+  "description": "Secure Digital Document Management System (DMS) and Police Asset Lifecycle Platform for law enforcement, courts, legal departments, and forensic laboratories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

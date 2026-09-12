@@ -1,0 +1,16 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+blockchain/network/channel-artifacts/
+blockchain/network/organizations/
+storage/evidence/*.enc
+storage/keys/
+storage/case_repo/
+*.key
+*.pem
+*.zip

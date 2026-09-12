@@ -1,0 +1,13 @@
+node_modules
+dist
+storage/evidence/*
+!storage/evidence/.gitkeep
+storage/quarantine/*
+!storage/quarantine/.gitkeep
+storage/case_repo/*
+!storage/case_repo/.gitkeep
+*.log
+.env
+.git
+.DS_Store
+*.zip

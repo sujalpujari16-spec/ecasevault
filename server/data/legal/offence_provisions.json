@@ -1,0 +1,1263 @@
+{
+  "mappings": [
+    {
+      "offence_id": "MURDER",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "101",
+          "title": "Murder",
+          "role": "PRIMARY",
+          "why_relevant": "Defines the substantive crime of Murder: when culpable homicide amounts to murder under statutory law.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "103",
+          "title": "Punishment for murder",
+          "role": "PUNISHMENT",
+          "why_relevant": "Prescribes the mandatory punishment for murder: Death or imprisonment for life, and liability to fine under Section 103(1).",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "103(2)",
+          "title": "Group murder on grounds of race, caste, sex, language, or religion (Mob Lynching)",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF the murder is committed by five or more persons acting in concert on grounds of race, caste, sex, language, or religion.",
+          "trigger_condition": "5 or more persons acting together based on caste, community, race, language, or religion",
+          "priority": 3
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases (Mandatory FIR Registration)",
+          "role": "PROCEDURAL",
+          "why_relevant": "Mandates immediate registration of First Information Report (FIR) for cognizable offence.",
+          "priority": 4
+        },
+        {
+          "act": "BNSS",
+          "section": "187",
+          "title": "Procedure when investigation cannot be completed in 24 hours (Police Custody & Remand)",
+          "role": "PROCEDURAL",
+          "why_relevant": "Governs statutory magistrate remand and police custody up to 15 days in whole or in parts across first 40 or 60 days.",
+          "priority": 5
+        },
+        {
+          "act": "BNSS",
+          "section": "193",
+          "title": "Report of police officer on completion of investigation (Charge Sheet)",
+          "role": "PROCEDURAL",
+          "why_relevant": "Final charge sheet submission to Court of Session.",
+          "priority": 6
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "39",
+          "title": "Opinions of experts (Forensic Post-Mortem, DNA, & Ballistics Analysis)",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Admissibility of autopsy medical report, injury marks, and ballistics/DNA evidence to prove cause of death.",
+          "priority": 7
+        },
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Admissibility of electronic records and mandatory certificate",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Mandatory certificate for CCTV footage, suspect mobile location/CDR, and surveillance recordings.",
+          "priority": 8
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "109",
+          "title": "Attempt to murder",
+          "role": "RELATED",
+          "why_relevant": "Invoked if the murderous assault failed to cause death of the victim.",
+          "priority": 9
+        },
+        {
+          "act": "BNS",
+          "section": "61",
+          "title": "Criminal conspiracy",
+          "role": "RELATED",
+          "why_relevant": "Invoked if two or more persons agreed to commit the murder.",
+          "priority": 10
+        }
+      ]
+    },
+    {
+      "offence_id": "ATTEMPT_TO_MURDER",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "109",
+          "title": "Attempt to murder",
+          "role": "PRIMARY",
+          "why_relevant": "Primary substantive offence: Doing any act with intention or knowledge that if death ensued, it would amount to murder.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "109",
+          "title": "Punishment for attempt to murder",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment up to 10 years and fine; if hurt is caused to any person, imprisonment for life or up to 10 years.",
+          "priority": 2
+        }
+      ],
+      "conditional": [],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases (FIR)",
+          "role": "PROCEDURAL",
+          "why_relevant": "Immediate registration of FIR.",
+          "priority": 3
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "39",
+          "title": "Opinions of experts (Medico-Legal Certificate)",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Government hospital MLC establishing depth and nature of injuries.",
+          "priority": 4
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "117",
+          "title": "Voluntarily causing grievous hurt",
+          "role": "RELATED",
+          "why_relevant": "Secondary charge for dangerous injury caused.",
+          "priority": 5
+        }
+      ]
+    },
+    {
+      "offence_id": "DRUNK_DRIVING",
+      "primary": [
+        {
+          "act": "Motor Vehicles Act, 1988",
+          "section": "185",
+          "title": "Driving by a drunken person or by a person under the influence of drugs",
+          "role": "PRIMARY",
+          "why_relevant": "Mandatory primary substantive offence: Blood Alcohol Content (BAC) exceeding 30 mg per 100 ml blood.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "Motor Vehicles Act, 1988",
+          "section": "185",
+          "title": "Punishment for drunken driving",
+          "role": "PUNISHMENT",
+          "why_relevant": "1st Offence: Up to 6 months imprisonment or fine up to ₹10,000. Repeat offence: Up to 2 years imprisonment or fine up to ₹15,000.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "281",
+          "title": "Rash driving or riding on a public way",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF the vehicle was observed being navigated rashly or negligently on a public road so as to endanger life.",
+          "trigger_condition": "Observable erratic, zig-zag, or dangerous driving navigation on public road",
+          "priority": 3
+        },
+        {
+          "act": "BNS",
+          "section": "125",
+          "title": "Act endangering life or personal safety of others",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF an overt rash/negligent action actively jeopardized pedestrians or road users.",
+          "trigger_condition": "Pedestrians or vehicles actively put in imminent peril",
+          "priority": 4
+        }
+      ],
+      "procedural": [
+        {
+          "act": "Motor Vehicles Act, 1988",
+          "section": "203",
+          "title": "Breath tests",
+          "role": "PROCEDURAL",
+          "why_relevant": "Administration of calibrated electronic breath analyser test at checkpoint.",
+          "priority": 5
+        },
+        {
+          "act": "Motor Vehicles Act, 1988",
+          "section": "204",
+          "title": "Laboratory examination of blood specimens (Mandatory 2-Hour Window)",
+          "role": "PROCEDURAL",
+          "why_relevant": "Mandatory escort to registered medical officer within 2 hours of interception for blood draw.",
+          "priority": 6
+        },
+        {
+          "act": "BNSS",
+          "section": "105",
+          "title": "Recording of search and seizure through audio-video electronic means",
+          "role": "PROCEDURAL",
+          "why_relevant": "Mandatory audio-video recording of breathalyzer testing, field sobriety check, and vehicle impoundment.",
+          "priority": 7
+        },
+        {
+          "act": "Motor Vehicles Act, 1988",
+          "section": "202",
+          "title": "Power to arrest without warrant in view of police officer",
+          "role": "PROCEDURAL",
+          "why_relevant": "Statutory police power to arrest without warrant on positive breath test or refusal.",
+          "priority": 8
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Admissibility of electronic records and mandatory certificate",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Mandatory signed certificate authenticating breathalyzer digital printout and dashcam/bodycam video.",
+          "priority": 9
+        },
+        {
+          "act": "BSA",
+          "section": "39",
+          "title": "Opinions of experts (Chemical Examiner Blood Analysis)",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Signed chemical analysis report of blood alcohol level from Regional Forensic Science Laboratory.",
+          "priority": 10
+        }
+      ],
+      "related": []
+    },
+    {
+      "offence_id": "DEATH_BY_NEGLIGENCE",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "106(1)",
+          "title": "Causing death by negligence",
+          "role": "PRIMARY",
+          "why_relevant": "Primary offence: Causing death of any person by doing any rash or negligent act not amounting to culpable homicide.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "106(1)",
+          "title": "Punishment for causing death by negligence",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment for a term which may extend to five years, and shall also be liable to fine.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "106(2)",
+          "title": "Hit and Run (Escaping scene without reporting to police or magistrate)",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF the driver causes death by rash or negligent driving and escapes without reporting to police or doctor.",
+          "trigger_condition": "Driver escaped after fatal collision without reporting to a police officer or magistrate",
+          "priority": 3
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases",
+          "role": "PROCEDURAL",
+          "why_relevant": "Mandatory FIR registration.",
+          "priority": 4
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "39",
+          "title": "Opinions of experts (Autopsy / Post-Mortem Report)",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Post-mortem proving death was directly caused by vehicular blunt force trauma.",
+          "priority": 5
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "281",
+          "title": "Rash driving on a public way",
+          "role": "RELATED",
+          "why_relevant": "Concomitant traffic navigation offence.",
+          "priority": 6
+        }
+      ]
+    },
+    {
+      "offence_id": "STALKING",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "78",
+          "title": "Stalking",
+          "role": "PRIMARY",
+          "why_relevant": "Primary substantive offence covering both physical stalking and electronic/cyber monitoring of a woman.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "78",
+          "title": "Punishment for stalking",
+          "role": "PUNISHMENT",
+          "why_relevant": "First conviction: Imprisonment up to 3 years and fine (Bailable). Subsequent: Imprisonment up to 5 years and fine (Non-Bailable).",
+          "priority": 2
+        }
+      ],
+      "conditional": [],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases",
+          "role": "PROCEDURAL",
+          "why_relevant": "Cognizable offence requiring FIR registration.",
+          "priority": 3
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Admissibility of electronic records",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Mandatory certificate for social media chats, CDR, and email correspondence.",
+          "priority": 4
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "79",
+          "title": "Word, gesture or act intended to insult modesty of a woman",
+          "role": "RELATED",
+          "why_relevant": "Secondary charge if verbal obscenities or indecent gestures were made.",
+          "priority": 5
+        }
+      ]
+    },
+    {
+      "offence_id": "THEFT",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "303(1)",
+          "title": "Theft",
+          "role": "PRIMARY",
+          "why_relevant": "Primary substantive offence: Taking movable property dishonestly out of possession without consent.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "303(2)",
+          "title": "Punishment for theft",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment up to 3 years, or fine, or both. Community service for petty theft under ₹5,000 upon restoration.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "305",
+          "title": "Theft in dwelling house, means of transport, or place of worship",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF theft is committed in a building, tent, vessel, vehicle (bus/car/train), or religious shrine.",
+          "trigger_condition": "Theft inside house, dwelling place, motor vehicle, or place of worship",
+          "priority": 3
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases",
+          "role": "PROCEDURAL",
+          "why_relevant": "FIR registration.",
+          "priority": 4
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "23",
+          "title": "Information received from accused leading to recovery",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Recovery memo of stolen property discovered pursuant to disclosure statement.",
+          "priority": 5
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "317",
+          "title": "Stolen property",
+          "role": "RELATED",
+          "why_relevant": "Dishonestly receiving or retaining stolen property.",
+          "priority": 6
+        }
+      ]
+    },
+    {
+      "offence_id": "CHEATING_FRAUD",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "318",
+          "title": "Cheating",
+          "role": "PRIMARY",
+          "why_relevant": "Primary substantive offence: Fraudulent deception dishonestly inducing delivery of property.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "318(4)",
+          "title": "Punishment for cheating and dishonestly inducing delivery of property (Mirror of legacy IPC 420)",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment up to 7 years, and shall also be liable to fine.",
+          "priority": 2
+        }
+      ],
+      "conditional": [],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases",
+          "role": "PROCEDURAL",
+          "why_relevant": "FIR registration.",
+          "priority": 3
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Admissibility of electronic records",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Certified bank statements, UPI transaction logs, and WhatsApp conversation records.",
+          "priority": 4
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "316",
+          "title": "Criminal breach of trust",
+          "role": "RELATED",
+          "why_relevant": "Where property was lawfully entrusted before misappropriation.",
+          "priority": 5
+        }
+      ]
+    },
+    {
+      "offence_id": "RAPE",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "63",
+          "title": "Rape",
+          "role": "PRIMARY",
+          "why_relevant": "Defines substantive offence of rape and absence of valid consent.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "64",
+          "title": "Punishment for rape",
+          "role": "PUNISHMENT",
+          "why_relevant": "Rigorous imprisonment not less than 10 years extending to life, and fine.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "65",
+          "title": "Punishment for rape of woman under 16 or 12 years",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF victim is a minor child under 16 or 12 years (triggers life imprisonment or death penalty).",
+          "trigger_condition": "Victim age under 16 or under 12 years",
+          "priority": 3
+        },
+        {
+          "act": "BNS",
+          "section": "70",
+          "title": "Gang rape",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF one or more persons acting in furtherance of common intention commit rape.",
+          "trigger_condition": "Two or more persons acting together in the commission of the offence",
+          "priority": 4
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "176",
+          "title": "Procedure for recording statement and medical examination of sexual assault victim",
+          "role": "PROCEDURAL",
+          "why_relevant": "Mandatory statement recording by woman police officer and medical examination within 24 hours.",
+          "priority": 5
+        },
+        {
+          "act": "BNSS",
+          "section": "193(3)",
+          "title": "Mandatory two-month investigation completion timeline",
+          "role": "PROCEDURAL",
+          "why_relevant": "Investigation into rape must be completed within 2 months from FIR date.",
+          "priority": 6
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "119",
+          "title": "Presumption as to absence of consent in certain prosecutions for rape",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Forensic examination and DNA match from sexual assault evidence kit.",
+          "priority": 8
+        }
+      ],
+      "related": []
+    },
+    {
+      "offence_id": "EXTORTION",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "308",
+          "title": "Extortion",
+          "role": "PRIMARY",
+          "why_relevant": "Defines Extortion: intentionally putting any person in fear of any injury and thereby dishonestly inducing delivery of property or valuable security.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "308(2)",
+          "title": "Punishment for extortion",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment of either description for a term which may extend to seven years, or with fine, or with both.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "308(4)",
+          "title": "Extortion by putting person in fear of death or grievous hurt",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF extortion is committed by putting the victim in fear of death or grievous hurt (punishable up to 10 years and fine).",
+          "trigger_condition": "Threat or fear of death or grievous hurt",
+          "priority": 3
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases (FIR Registration)",
+          "role": "PROCEDURAL",
+          "why_relevant": "Mandatory registration of FIR for cognizable offence of extortion.",
+          "priority": 4
+        },
+        {
+          "act": "BNSS",
+          "section": "187",
+          "title": "Remand and police custody procedures",
+          "role": "PROCEDURAL",
+          "why_relevant": "Governs judicial remand and police custody for interrogation and recovery.",
+          "priority": 5
+        },
+        {
+          "act": "BNSS",
+          "section": "193",
+          "title": "Police Report on completion of investigation",
+          "role": "PROCEDURAL",
+          "why_relevant": "Submission of final charge sheet.",
+          "priority": 6
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Admissibility of electronic records and mandatory certificate",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Mandatory BSA Section 63 certificate for extortion phone calls, WhatsApp threats, audio recordings, and payment transaction trails.",
+          "priority": 7
+        },
+        {
+          "act": "BSA",
+          "section": "39",
+          "title": "Opinions of experts (Voice Spectrography Analysis)",
+          "role": "EVIDENTIARY",
+          "why_relevant": "FSL voice spectrography comparison of extortionist phone recordings with suspect exemplar speech samples.",
+          "priority": 8
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "309",
+          "title": "Robbery",
+          "role": "RELATED",
+          "why_relevant": "When extortion amounts to robbery due to presence of offender causing imminent danger.",
+          "priority": 9
+        },
+        {
+          "act": "BNS",
+          "section": "351",
+          "title": "Criminal intimidation",
+          "role": "RELATED",
+          "why_relevant": "Invoked where threat is made without obtaining delivery of property.",
+          "priority": 10
+        }
+      ]
+    },
+    {
+      "offence_id": "ROBBERY_AND_DACOITY",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "309",
+          "title": "Robbery",
+          "role": "PRIMARY",
+          "why_relevant": "Defines Robbery: theft or extortion involving voluntarily causing or attempting to cause death, hurt, or wrongful restraint.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "309(2)",
+          "title": "Punishment for robbery",
+          "role": "PUNISHMENT",
+          "why_relevant": "Rigorous imprisonment up to 10 years and fine; if committed on highway between sunset and sunrise, up to 14 years.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "310",
+          "title": "Dacoity",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF five or more persons conjointly commit or attempt to commit robbery (punishable with imprisonment for life or rigorous imprisonment up to 10 years).",
+          "trigger_condition": "5 or more persons acting together",
+          "priority": 3
+        },
+        {
+          "act": "BNS",
+          "section": "311",
+          "title": "Dacoity with murder",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF any one of five or more persons committing dacoity commits murder (punishable with death or imprisonment for life).",
+          "trigger_condition": "Murder committed in the course of dacoity",
+          "priority": 4
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Mandatory FIR Registration",
+          "role": "PROCEDURAL",
+          "why_relevant": "Immediate registration of cognizable FIR.",
+          "priority": 5
+        },
+        {
+          "act": "BNSS",
+          "section": "187",
+          "title": "Police custody and recovery",
+          "role": "PROCEDURAL",
+          "why_relevant": "Police custody for recovery of looted property/weapons.",
+          "priority": 6
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "CCTV & electronic evidence certificate",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Admissibility certificate for crime scene surveillance footage.",
+          "priority": 7
+        },
+        {
+          "act": "BSA",
+          "section": "39",
+          "title": "Fingerprint and Ballistics expert opinion",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Matching weapon ballistic marks and latent fingerprints recovered from robbery scene.",
+          "priority": 8
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "303",
+          "title": "Theft",
+          "role": "RELATED",
+          "why_relevant": "Underlying taking of property.",
+          "priority": 9
+        }
+      ]
+    },
+    {
+      "offence_id": "RASH_DRIVING",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "281",
+          "title": "Rash driving or riding on a public way",
+          "role": "PRIMARY",
+          "why_relevant": "Drives any vehicle or rides on any public way in a manner so rash or negligent as to endanger human life or cause hurt/injury.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "281",
+          "title": "Punishment for rash driving",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment of either description for a term which may extend to six months, or with fine which may extend to one thousand rupees, or with both.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "125(a)",
+          "title": "Act endangering life or personal safety causing hurt",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF the rash act resulted in simple bodily hurt to any person.",
+          "trigger_condition": "Hurt caused to any person",
+          "priority": 3
+        },
+        {
+          "act": "BNS",
+          "section": "125(b)",
+          "title": "Act endangering life causing grievous hurt",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF the rash act resulted in grievous hurt / bone fracture / permanent disfiguration.",
+          "trigger_condition": "Grievous hurt caused to any person",
+          "priority": 4
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases (FIR)",
+          "role": "PROCEDURAL",
+          "why_relevant": "Immediate registration of FIR.",
+          "priority": 5
+        },
+        {
+          "act": "BNSS",
+          "section": "105",
+          "title": "Audio-video recording of search and seizure",
+          "role": "PROCEDURAL",
+          "why_relevant": "Mandatory videography of vehicle inspection, skid marks, and damage.",
+          "priority": 6
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Electronic record certificate",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Admissibility certificate for dashcam, traffic junction CCTV footage, and GPS speedometer telemetry.",
+          "priority": 7
+        },
+        {
+          "act": "BSA",
+          "section": "39",
+          "title": "Motor Vehicle Inspector mechanical inspection report",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Technical inspection of brakes, steering, and mechanical defects.",
+          "priority": 8
+        }
+      ],
+      "related": [
+        {
+          "act": "Motor Vehicles Act",
+          "section": "185",
+          "title": "Driving by a drunken person or by a person under the influence of drugs",
+          "role": "RELATED",
+          "why_relevant": "Invoked if driver has alcohol in blood exceeding 30 mg per 100 ml.",
+          "priority": 9
+        }
+      ]
+    },
+    {
+      "offence_id": "HURT_AND_GRIEVOUS_HURT",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "115",
+          "title": "Voluntarily causing hurt",
+          "role": "PRIMARY",
+          "why_relevant": "Defines Voluntarily causing hurt: doing any act with intention of thereby causing hurt to any person.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "115(2)",
+          "title": "Punishment for voluntarily causing hurt",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment of either description for a term which may extend to one year, or with fine which may extend to ten thousand rupees, or with both.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "117",
+          "title": "Voluntarily causing grievous hurt",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF the hurt causes emasculation, permanent privation of sight/hearing, fracture, or endangers life for 15 days.",
+          "trigger_condition": "Grievous injury, bone fracture, or life endangerment",
+          "priority": 3
+        },
+        {
+          "act": "BNS",
+          "section": "118",
+          "title": "Voluntarily causing hurt or grievous hurt by dangerous weapons or means",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF committed by means of any instrument for shooting, stabbing or cutting, fire, corrosive substance, or poison.",
+          "trigger_condition": "Dangerous weapon, sharp weapon, acid, or fire used",
+          "priority": 4
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases (FIR)",
+          "role": "PROCEDURAL",
+          "why_relevant": "FIR registration.",
+          "priority": 5
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "39",
+          "title": "Opinions of experts (Medical Officer Medico-Legal Certificate - MLC)",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Official Medico-Legal Certificate classifying injuries as simple or grievous.",
+          "priority": 6
+        },
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Electronic record certificate",
+          "role": "EVIDENTIARY",
+          "why_relevant": "CCTV footage and mobile video recordings.",
+          "priority": 7
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "109",
+          "title": "Attempt to murder",
+          "role": "RELATED",
+          "why_relevant": "If injury was inflicted with intention or knowledge to cause death.",
+          "priority": 8
+        }
+      ]
+    },
+    {
+      "offence_id": "CYBERCRIME",
+      "primary": [
+        {
+          "act": "Information Technology Act",
+          "section": "66",
+          "title": "Computer related offences",
+          "role": "PRIMARY",
+          "why_relevant": "If any person, dishonestly or fraudulently, commits hacking or unauthorized alteration of computer data under Section 43.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "Information Technology Act",
+          "section": "66",
+          "title": "Punishment for computer related offences",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment for a term which may extend to three years or with fine which may extend to five lakh rupees or with both.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "Information Technology Act",
+          "section": "66C",
+          "title": "Punishment for identity theft",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF offender fraudulently uses electronic signature, password, or other unique identification feature of another.",
+          "trigger_condition": "Identity theft or password compromise",
+          "priority": 3
+        },
+        {
+          "act": "Information Technology Act",
+          "section": "66D",
+          "title": "Punishment for cheating by personation by using computer resource",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF offender cheats by personating another person through any computer resource or network.",
+          "trigger_condition": "Cheating by online personation",
+          "priority": 4
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases (Cyber FIR)",
+          "role": "PROCEDURAL",
+          "why_relevant": "Registration of FIR at designated Cyber Police Station.",
+          "priority": 5
+        },
+        {
+          "act": "BNSS",
+          "section": "105",
+          "title": "Audio-video recording of digital device seizure",
+          "role": "PROCEDURAL",
+          "why_relevant": "Mandatory recording of digital evidence hash calculation, faraday bagging, and seizure.",
+          "priority": 6
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Admissibility of electronic records and mandatory certificate",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Mandatory Section 63 certificate with hash values (MD5/SHA-256) for forensic hard drive clones, server logs, and IP headers.",
+          "priority": 7
+        },
+        {
+          "act": "BSA",
+          "section": "39",
+          "title": "Opinions of digital forensics examiner (Cyber FSL Report)",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Government Examiner of Electronic Evidence (Section 79A IT Act / BSA 39) forensic analysis report.",
+          "priority": 8
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "318",
+          "title": "Cheating",
+          "role": "RELATED",
+          "why_relevant": "General penal provision for monetary cheating and deception.",
+          "priority": 9
+        }
+      ]
+    },
+    {
+      "offence_id": "KIDNAPPING_AND_ABDUCTION",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "137",
+          "title": "Kidnapping",
+          "role": "PRIMARY",
+          "why_relevant": "Defines Kidnapping: from India, or from lawful guardianship (conveying minor under 18 out of keeping of lawful guardian without consent).",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "137(2)",
+          "title": "Punishment for kidnapping",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "140",
+          "title": "Kidnapping or abducting in order to murder or for ransom",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF kidnapped or abducted in order that such person may be murdered or put in danger of being murdered.",
+          "trigger_condition": "Intent to murder or demand ransom",
+          "priority": 3
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases (FIR Registration)",
+          "role": "PROCEDURAL",
+          "why_relevant": "Immediate mandatory FIR registration.",
+          "priority": 4
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Admissibility of electronic records",
+          "role": "EVIDENTIARY",
+          "why_relevant": "CCTV capture, mobile tower dump, and suspect tracking telemetry.",
+          "priority": 5
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "143",
+          "title": "Trafficking of person",
+          "role": "RELATED",
+          "why_relevant": "Recruiting, transporting, harbouring or receiving a person for exploitation.",
+          "priority": 6
+        }
+      ]
+    },
+    {
+      "offence_id": "DOWRY_DEATH",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "80",
+          "title": "Dowry death",
+          "role": "PRIMARY",
+          "why_relevant": "Where the death of a woman is caused by burns or bodily injury, or occurs under abnormal circumstances within seven years of her marriage, and it is shown that soon before her death she was subjected to cruelty or harassment by her husband or relative for dowry.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "80(2)",
+          "title": "Punishment for dowry death",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment for a term which shall not be less than seven years but which may extend to imprisonment for life.",
+          "priority": 2
+        }
+      ],
+      "conditional": [],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Mandatory FIR Registration",
+          "role": "PROCEDURAL",
+          "why_relevant": "Immediate cognizable FIR registration.",
+          "priority": 3
+        },
+        {
+          "act": "BNSS",
+          "section": "194",
+          "title": "Inquest by Executive Magistrate",
+          "role": "PROCEDURAL",
+          "why_relevant": "Mandatory inquest inquiry by Executive Magistrate for death of woman within seven years of marriage.",
+          "priority": 4
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "79",
+          "title": "Presumption as to dowry death",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Statutory legal presumption against the husband/relatives where woman was subjected to cruelty soon before death.",
+          "priority": 5
+        },
+        {
+          "act": "BSA",
+          "section": "39",
+          "title": "Opinions of forensic medical expert",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Autopsy report determining cause of death, burns, or asphyxia.",
+          "priority": 6
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "85",
+          "title": "Cruelty by husband or relatives",
+          "role": "RELATED",
+          "why_relevant": "Substantive charge for domestic harassment.",
+          "priority": 7
+        }
+      ]
+    },
+    {
+      "offence_id": "CRUELTY_BY_HUSBAND_OR_RELATIVES",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "85",
+          "title": "Husband or relative of husband of a woman subjecting her to cruelty",
+          "role": "PRIMARY",
+          "why_relevant": "Subjecting a woman to cruelty by her husband or relative of husband (defined under BNS Section 86).",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "85",
+          "title": "Punishment for cruelty by husband or relative",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment for a term which may extend to three years and shall also be liable to fine.",
+          "priority": 2
+        }
+      ],
+      "conditional": [],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases",
+          "role": "PROCEDURAL",
+          "why_relevant": "Registration of FIR.",
+          "priority": 3
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Electronic communications evidence",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Admissibility of WhatsApp chats, emails, and voice notes.",
+          "priority": 4
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "86",
+          "title": "Cruelty defined",
+          "role": "RELATED",
+          "why_relevant": "Statutory definition of willful conduct driving woman to suicide or causing grave injury/mental harassment.",
+          "priority": 5
+        }
+      ]
+    },
+    {
+      "offence_id": "CRIMINAL_BREACH_OF_TRUST",
+      "primary": [
+        {
+          "act": "BNS",
+          "section": "316",
+          "title": "Criminal breach of trust",
+          "role": "PRIMARY",
+          "why_relevant": "Defines Criminal breach of trust: being in any manner entrusted with property, dishonestly misappropriates or converts it.",
+          "priority": 1
+        }
+      ],
+      "punishment": [
+        {
+          "act": "BNS",
+          "section": "316(2)",
+          "title": "Punishment for criminal breach of trust",
+          "role": "PUNISHMENT",
+          "why_relevant": "Imprisonment of either description for a term which may extend to five years, or with fine, or with both.",
+          "priority": 2
+        }
+      ],
+      "conditional": [
+        {
+          "act": "BNS",
+          "section": "316(4)",
+          "title": "Criminal breach of trust by clerk or servant",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF committed by a clerk or servant (punishable up to 7 years and fine).",
+          "trigger_condition": "Clerk or servant relationship",
+          "priority": 3
+        },
+        {
+          "act": "BNS",
+          "section": "316(5)",
+          "title": "Criminal breach of trust by public servant, banker, merchant, or agent",
+          "role": "CONDITIONAL",
+          "why_relevant": "Applies ONLY IF committed by a public servant, banker, merchant, or agent (punishable with imprisonment for life or up to 10 years).",
+          "trigger_condition": "Public servant, banker, merchant, or fiduciary agent",
+          "priority": 4
+        }
+      ],
+      "procedural": [
+        {
+          "act": "BNSS",
+          "section": "173",
+          "title": "Information in cognizable cases (FIR)",
+          "role": "PROCEDURAL",
+          "why_relevant": "Mandatory FIR registration.",
+          "priority": 5
+        }
+      ],
+      "evidentiary": [
+        {
+          "act": "BSA",
+          "section": "63",
+          "title": "Bank audit and digital ledger certificate",
+          "role": "EVIDENTIARY",
+          "why_relevant": "Mandatory certificate for banking statements, ERP transaction logs, and ledger entries.",
+          "priority": 6
+        }
+      ],
+      "related": [
+        {
+          "act": "BNS",
+          "section": "318",
+          "title": "Cheating",
+          "role": "RELATED",
+          "why_relevant": "Dishonest inducement to deliver property.",
+          "priority": 7
+        }
+      ]
+    }
+  ]
+}

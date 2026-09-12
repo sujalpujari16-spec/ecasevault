@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #e5e2da;
+    color: #0f172a;
+  }
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Authentic Plaster / Stone Wall texture for background */
+.bg-vault-stone {
+  background-color: #e5e2da;
+  background-image: 
+    radial-gradient(ellipse at 40% 30%, #edeae2 0%, #e2ded5 55%, #d6d0c4 100%),
+    radial-gradient(#c4bdae 0.75px, transparent 0.75px);
+  background-size: 100% 100%, 24px 24px;
+}
+
+/* Custom 3D Book and Leather styling */
+.perspective-1000 {
+  perspective: 1200px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Paper texture simulation */
+.bg-paper-grid {
+  background-color: #faf8f2;
+  background-image: radial-gradient(#d3cdc0 0.75px, transparent 0.75px), radial-gradient(#d3cdc0 0.75px, #faf8f2 0.75px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* Leather Texture Effect */
+.leather-dark {
+  background: radial-gradient(circle at 35% 35%, #243548 0%, #152232 55%, #0c141e 100%);
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.7),
+    0 22px 45px -8px rgba(30, 41, 59, 0.4),
+    0 10px 20px -5px rgba(30, 41, 59, 0.25);
+}
+
+.leather-stitch {
+  border: 1.5px dashed rgba(230, 238, 250, 0.55);
+}
+
+/* Metallic foil sheen */
+.silver-emboss {
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 40%, #e2e8f0 60%, #64748b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 1px 1.5px rgba(0, 0, 0, 0.6)) drop-shadow(0px -1px 0.5px rgba(255, 255, 255, 0.4));
+}
+
+.gold-emboss {
+  background: linear-gradient(135deg, #fef08a 0%, #ca8a04 40%, #fde047 60%, #854d0e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.7));
+}
+
+/* Custom Scrollbar for vault */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #edeae2;
+}
+::-webkit-scrollbar-thumb {
+  background: #b8b2a3;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8e887a;
+}
+

@@ -1,0 +1,183 @@
+# ============================================================================
+# e-CASEVAULT — Hyperledger Fabric 2.5 Channel Configuration
+# Channel: ecasevault-channel
+# Organizations: PoliceOrg, FSLOrg, CyberCellOrg
+# ============================================================================
+
+---
+Organizations:
+  - &OrdererOrg
+    Name: OrdererOrg
+    ID: OrdererMSP
+    MSPDir: organizations/ordererOrganizations/casevault.police.gov.in/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('OrdererMSP.member')"
+      Writers:
+        Type: Signature
+        Rule: "OR('OrdererMSP.member')"
+      Admins:
+        Type: Signature
+        Rule: "OR('OrdererMSP.admin')"
+
+  - &PoliceOrg
+    Name: PoliceOrgMSP
+    ID: PoliceOrgMSP
+    MSPDir: organizations/peerOrganizations/police.casevault.police.gov.in/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('PoliceOrgMSP.admin', 'PoliceOrgMSP.peer', 'PoliceOrgMSP.client')"
+      Writers:
+        Type: Signature
+        Rule: "OR('PoliceOrgMSP.admin', 'PoliceOrgMSP.client')"
+      Admins:
+        Type: Signature
+        Rule: "OR('PoliceOrgMSP.admin')"
+      Endorsement:
+        Type: Signature
+        Rule: "OR('PoliceOrgMSP.peer')"
+    AnchorPeers:
+      - Host: peer0.police.casevault.police.gov.in
+        Port: 7051
+
+  - &FSLOrg
+    Name: FSLOrgMSP
+    ID: FSLOrgMSP
+    MSPDir: organizations/peerOrganizations/fsl.casevault.police.gov.in/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('FSLOrgMSP.admin', 'FSLOrgMSP.peer', 'FSLOrgMSP.client')"
+      Writers:
+        Type: Signature
+        Rule: "OR('FSLOrgMSP.admin', 'FSLOrgMSP.client')"
+      Admins:
+        Type: Signature
+        Rule: "OR('FSLOrgMSP.admin')"
+      Endorsement:
+        Type: Signature
+        Rule: "OR('FSLOrgMSP.peer')"
+    AnchorPeers:
+      - Host: peer0.fsl.casevault.police.gov.in
+        Port: 9051
+
+  - &CyberCellOrg
+    Name: CyberCellOrgMSP
+    ID: CyberCellOrgMSP
+    MSPDir: organizations/peerOrganizations/cyber.casevault.police.gov.in/msp
+    Policies:
+      Readers:
+        Type: Signature
+        Rule: "OR('CyberCellOrgMSP.admin', 'CyberCellOrgMSP.peer', 'CyberCellOrgMSP.client')"
+      Writers:
+        Type: Signature
+        Rule: "OR('CyberCellOrgMSP.admin', 'CyberCellOrgMSP.client')"
+      Admins:
+        Type: Signature
+        Rule: "OR('CyberCellOrgMSP.admin')"
+      Endorsement:
+        Type: Signature
+        Rule: "OR('CyberCellOrgMSP.peer')"
+    AnchorPeers:
+      - Host: peer0.cyber.casevault.police.gov.in
+        Port: 11051
+
+Capabilities:
+  Channel: &ChannelCapabilities
+    V2_0: true
+  Orderer: &OrdererCapabilities
+    V2_0: true
+  Application: &ApplicationCapabilities
+    V2_5: true
+
+Application: &ApplicationDefaults
+  Organizations:
+  Policies:
+    LifecycleEndorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+    Endorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+  Capabilities:
+    <<: *ApplicationCapabilities
+
+Orderer: &OrdererDefaults
+  OrdererType: etcdraft
+  Addresses:
+    - orderer.casevault.police.gov.in:7050
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    BlockValidation:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+
+Channel: &ChannelDefaults
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+  Capabilities:
+    <<: *ChannelCapabilities
+
+Profiles:
+  CaseVaultChannel:
+    <<: *ChannelDefaults
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+        - *OrdererOrg
+      Capabilities: *OrdererCapabilities
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *PoliceOrg
+        - *FSLOrg
+        - *CyberCellOrg
+      Capabilities: *ApplicationCapabilities
+
+  ecasevault-channel:
+    <<: *ChannelDefaults
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+        - *OrdererOrg
+      Capabilities: *OrdererCapabilities
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *PoliceOrg
+        - *FSLOrg
+        - *CyberCellOrg
+      Capabilities: *ApplicationCapabilities

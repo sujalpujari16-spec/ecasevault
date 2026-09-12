@@ -1,0 +1,268 @@
+{
+  "offences": [
+    {
+      "offence_id": "MURDER",
+      "canonical_name": "Murder",
+      "aliases": [
+        "murder",
+        "killing",
+        "intentional killing",
+        "homicide with murder",
+        "killed a person",
+        "person was murdered",
+        "murder case",
+        "hatya",
+        "shot and killed",
+        "stabbed to death",
+        "lynched"
+      ],
+      "keywords": ["murder", "culpable homicide", "death", "killing", "deadly weapon", "premeditated"],
+      "description": "Culpable homicide amounting to murder where act is done with intention of causing death or bodily injury sufficient in ordinary course of nature to cause death."
+    },
+    {
+      "offence_id": "ATTEMPT_TO_MURDER",
+      "canonical_name": "Attempt to Murder",
+      "aliases": [
+        "attempt to murder",
+        "tried to kill",
+        "attempted murder",
+        "murderous assault",
+        "shot at victim",
+        "attempt murder"
+      ],
+      "keywords": ["attempt", "murder", "kill", "firearm", "stabbing"],
+      "description": "Doing any act with such intention or knowledge and under such circumstances that if death had occurred, it would amount to murder."
+    },
+    {
+      "offence_id": "DEATH_BY_NEGLIGENCE",
+      "canonical_name": "Causing Death by Negligence",
+      "aliases": [
+        "death by negligence",
+        "negligent driving death",
+        "died because of negligent driving",
+        "died due to negligent driving",
+        "negligent driving causing death",
+        "causing death by negligent driving",
+        "hit and run death",
+        "causing death by rash or negligent act",
+        "died in accident",
+        "fatal road accident",
+        "pedestrian killed by car"
+      ],
+      "keywords": ["negligence", "rash act", "death", "fatal accident", "hit and run"],
+      "description": "Causing the death of any person by doing any rash or negligent act not amounting to culpable homicide, including failure to report hit-and-run incidents."
+    },
+    {
+      "offence_id": "DRUNK_DRIVING",
+      "canonical_name": "Drunk Driving & Driving Under Influence",
+      "aliases": [
+        "drunk driving",
+        "drunk and drive",
+        "drink and drive",
+        "drinking and driving",
+        "drunken driving",
+        "drunk drive",
+        "drink drive",
+        "driving under the influence",
+        "dui",
+        "bac",
+        "breath analyser",
+        "breathalyzer",
+        "alcohol breath analyzer"
+      ],
+      "keywords": ["drunk", "alcohol", "liquor", "breathalyzer", "blood alcohol content", "bac"],
+      "description": "Driving or attempting to drive a motor vehicle with Blood Alcohol Content (BAC) exceeding 30 mg per 100 ml of blood detected via breath test or blood specimen."
+    },
+    {
+      "offence_id": "RASH_DRIVING",
+      "canonical_name": "Rash Driving or Riding on a Public Way",
+      "aliases": [
+        "rash driving",
+        "negligent driving",
+        "speeding",
+        "dangerous driving",
+        "reckless driving",
+        "rash riding",
+        "driving dangerously"
+      ],
+      "keywords": ["rash", "negligent", "speeding", "public way", "dangerous navigation"],
+      "description": "Driving or riding any vehicle on a public way so rashly or negligently as to endanger human life or cause hurt or injury to any person."
+    },
+    {
+      "offence_id": "STALKING",
+      "canonical_name": "Stalking",
+      "aliases": [
+        "stalking",
+        "stalker",
+        "following a woman",
+        "tracking woman",
+        "cyber stalking",
+        "monitoring online activity of woman",
+        "contacting despite disinterest"
+      ],
+      "keywords": ["stalking", "follow", "foster contact", "electronic monitoring", "cyber stalking"],
+      "description": "Following a woman and contacting or attempting to contact her despite clear indication of disinterest, or monitoring internet/electronic communication."
+    },
+    {
+      "offence_id": "THEFT",
+      "canonical_name": "Theft",
+      "aliases": [
+        "theft",
+        "stealing",
+        "stole",
+        "bike theft",
+        "car theft",
+        "stolen mobile",
+        "house theft",
+        "burglary",
+        "shoplifting"
+      ],
+      "keywords": ["theft", "dishonest intention", "movable property", "possession", "without consent"],
+      "description": "Intending to take dishonestly any movable property out of the possession of any person without that person's consent."
+    },
+    {
+      "offence_id": "ROBBERY_AND_DACOITY",
+      "canonical_name": "Robbery & Dacoity",
+      "aliases": [
+        "robbery",
+        "dacoity",
+        "armed robbery",
+        "looting",
+        "chain snatching with force",
+        "bank robbery",
+        "gang robbery"
+      ],
+      "keywords": ["robbery", "dacoity", "extortion with fear of death", "force", "armed"],
+      "description": "Theft or extortion involving voluntarily causing or attempting to cause death, hurt, or wrongful restraint."
+    },
+    {
+      "offence_id": "EXTORTION",
+      "canonical_name": "Extortion",
+      "aliases": [
+        "extortion",
+        "ransom",
+        "protection money",
+        "hafta",
+        "blackmail for money",
+        "threat to kill for property"
+      ],
+      "keywords": ["extortion", "fear of injury", "ransom", "demand delivery of property"],
+      "description": "Intentionally putting any person in fear of any injury to that person or to any other, and thereby dishonestly inducing delivery of property or valuable security."
+    },
+    {
+      "offence_id": "CHEATING_FRAUD",
+      "canonical_name": "Cheating & Financial Deception",
+      "aliases": [
+        "cheating",
+        "fraud",
+        "420",
+        "financial fraud",
+        "dishonest inducement",
+        "scam",
+        "fake promise to deliver property",
+        "online cheating"
+      ],
+      "keywords": ["cheating", "deceiving", "fraudulently", "dishonestly inducing delivery of property"],
+      "description": "Deceiving any person fraudulently or dishonestly to induce the person to deliver any property or make or alter any valuable security."
+    },
+    {
+      "offence_id": "CRIMINAL_BREACH_OF_TRUST",
+      "canonical_name": "Criminal Breach of Trust",
+      "aliases": [
+        "criminal breach of trust",
+        "misappropriation",
+        "entrusted property misappropriated",
+        "embezzlement",
+        "company fund diversion"
+      ],
+      "keywords": ["entrusted", "property", "dishonestly misappropriates", "breach of trust"],
+      "description": "Being in any manner entrusted with property or dominion over property, dishonestly misappropriating or converting it to own use."
+    },
+    {
+      "offence_id": "RAPE",
+      "canonical_name": "Rape & Sexual Assault",
+      "aliases": [
+        "rape",
+        "sexual assault",
+        "gang rape",
+        "penetrative sexual assault",
+        "minor rape"
+      ],
+      "keywords": ["rape", "consent", "sexual assault", "aggravated rape", "gang rape"],
+      "description": "Sexual acts committed against a woman without her consent, against her will, or when consent is obtained under fear or false promise."
+    },
+    {
+      "offence_id": "DOWRY_DEATH",
+      "canonical_name": "Dowry Death",
+      "aliases": [
+        "dowry death",
+        "dowry harassment death",
+        "bride burning",
+        "death within 7 years of marriage",
+        "harassed for dowry"
+      ],
+      "keywords": ["dowry", "death within 7 years", "cruelty", "husband", "in-laws"],
+      "description": "Death of a woman caused by burns, bodily injury, or occurring under abnormal circumstances within 7 years of marriage, preceded by cruelty for dowry."
+    },
+    {
+      "offence_id": "CRUELTY_BY_HUSBAND_OR_RELATIVES",
+      "canonical_name": "Cruelty by Husband or Relatives of Husband",
+      "aliases": [
+        "cruelty by husband",
+        "498a",
+        "domestic violence cruelty",
+        "harassment by in laws",
+        "wife harassment",
+        "matrimonial cruelty"
+      ],
+      "keywords": ["cruelty", "husband", "relative", "harassment", "coercion", "unlawful demand"],
+      "description": "Husband or relative of husband subjecting a woman to cruelty, harassment, or unlawful demand for property or valuable security."
+    },
+    {
+      "offence_id": "HURT_AND_GRIEVOUS_HURT",
+      "canonical_name": "Voluntarily Causing Hurt / Grievous Hurt",
+      "aliases": [
+        "hurt",
+        "grievous hurt",
+        "assault injury",
+        "beaten up",
+        "fracture caused",
+        "stab injury",
+        "permanent disfiguration",
+        "physical violence"
+      ],
+      "keywords": ["hurt", "grievous hurt", "fracture", "bodily pain", "dangerous weapon"],
+      "description": "Voluntarily causing bodily pain, disease, infirmity, or permanent privation/fracture to any person."
+    },
+    {
+      "offence_id": "CYBERCRIME",
+      "canonical_name": "Cybercrime & Online Identity Theft",
+      "aliases": [
+        "cybercrime",
+        "cyber fraud",
+        "identity theft",
+        "phishing",
+        "otp scam",
+        "sim swap fraud",
+        "digital arrest scam",
+        "upi hacking"
+      ],
+      "keywords": ["cyber", "computer resource", "identity theft", "electronic signature", "password theft"],
+      "description": "Using computer resource or communication device dishonestly to steal identity, impersonate, or cheat individuals online."
+    },
+    {
+      "offence_id": "KIDNAPPING_AND_ABDUCTION",
+      "canonical_name": "Kidnapping & Abduction",
+      "aliases": [
+        "kidnapping",
+        "abduction",
+        "kidnapped child",
+        "kidnapped for ransom",
+        "forced confinement",
+        "abducted person"
+      ],
+      "keywords": ["kidnapping", "lawful guardianship", "abduction", "compelled by force", "ransom"],
+      "description": "Taking or enticing any minor or person of unsound mind out of the keeping of the lawful guardian without consent, or forcefully compelling movement."
+    }
+  ]
+}

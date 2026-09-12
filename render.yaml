@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: ecasevault-portal
+    runtime: node
+    plan: free
+    region: singapore # or oregon, frankfurt, etc.
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ecasevault-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: INITIAL_SEED_PASSWORD
+        value: Demo@12345
+      - key: ALLOW_DEMO_AUTH
+        value: "true"
+      - key: SUPABASE_URL
+        value: https://ecasevault-supabase.police.gov.in
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        value: mock_service_role_key_for_ecasevault_enterprise
+      - key: SUPABASE_ANON_KEY
+        value: mock_anon_key
+
+databases:
+  - name: ecasevault-db
+    databaseName: ecasevault
+    user: ecasevault_user
+    plan: free
+    region: singapore

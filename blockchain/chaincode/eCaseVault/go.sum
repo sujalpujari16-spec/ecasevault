@@ -1,0 +1,16 @@
+github.com/go-openapi/jsonpointer v0.19.5/go.mod h1:Pl9vOtqEWErmShwVjC8pYs9bag34zvsvNHOCQQ2fUGQ=
+github.com/go-openapi/jsonreference v0.20.0/go.mod h1:jYR6DC8wH408Pge91jK07C087H6k2b86B1hBq9z3pNs=
+github.com/go-openapi/spec v0.20.8/go.mod h1:Yh/kgq5r+ZadZ5lAAgnbiU74F4x396uK8+81QG+p4c8=
+github.com/go-openapi/swag v0.21.1/go.mod h1:U4/BiqPzC846n8/58p3iL4f/y8j83/U6XG7U2J64iWc=
+github.com/golang/protobuf v1.5.3 h1:KhyjKVUg7Usr/dYsdSqoFveMYd5ko72D+zANwlG1mmg=
+github.com/golang/protobuf v1.5.3/go.mod h1:L31Mt4sWKsslIIFFYoSpHxE6444XNuc43ETgkJiJppk=
+github.com/hyperledger/fabric-chaincode-go v0.0.0-20230228194215-b84255bf63e2 h1:aF812y2Y945wF5uMbmh9f0p2Y3eM/7n7fX5X9rJjM1g=
+github.com/hyperledger/fabric-chaincode-go v0.0.0-20230228194215-b84255bf63e2/go.mod h1:vF/sH+h0U7Z8Y4e3p5K2r5l2D4m4m6s7d8f9q2e9f1a=
+github.com/hyperledger/fabric-contract-api-go v1.2.1 h1:yU/WbHw0N8N2J5f/b1q3q7mK5m9u8d9f1a2b3c4d5e6=
+github.com/hyperledger/fabric-contract-api-go v1.2.1/go.mod h1:m2/3q+f7d7k8n0d8r4k8m4j7n8m7u4d4a8e3d8f9a2b=
+github.com/hyperledger/fabric-protos-go v0.3.0 h1:3eK9a0i1d3n5f7g9j8n0d8r4k8m4j7n8m7u4d4a8e3d=
+github.com/hyperledger/fabric-protos-go v0.3.0/go.mod h1:p4m7u3f9k8n0d8r4k8m4j7n8m7u4d4a8e3d8f9a2b3c=
+google.golang.org/genproto v0.0.0-20230110181048-76db0878b65f/go.mod h1:yNyA6K6P3Lw+n/cR/0m0x+sX9/l347yD7m/3n5n7p4k=
+google.golang.org/grpc v1.53.0/go.mod h1:m2k9a0i1d3n5f7g9j8n0d8r4k8m4j7n8m7u4d4a8e3d=
+google.golang.org/protobuf v1.28.1 h1:d2IbJMBALO1PwqEW1VoA/VEUXDrmv2W//7ZGXbYw5kg=
+google.golang.org/protobuf v1.28.1/go.mod h1:4MY060fMkeUVGNTkDgkPTr6ET3QYuvZsubDrExzyTwt=
